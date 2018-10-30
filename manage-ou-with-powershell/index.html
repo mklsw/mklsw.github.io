@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="PowerShell,OU,Windows,Server,">
 
 
 
@@ -79,16 +79,27 @@
 
 
 
-<meta name="description" content="Stay Hungry Stay Foolish">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Jun&#39;s Blog">
-<meta property="og:url" content="https://wujun.org/tags/Domain/index.html">
+<meta name="description" content="OU的管理主要有新增，修改和删除，下面分别简单介绍下：  直接创建一个Shanghai的OU，无任何其他参数： New-ADOrganizationalUnit   New-ADOrganizationalUnit -Name &amp;quot;Shanghai&amp;quot; -Path &amp;quot;DC=contoso,DC=com&amp;quot;  如下图      默认情况下创建的OU是带保护的，如果需">
+<meta name="keywords" content="PowerShell,OU,Windows,Server">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Manage OU with PowerShell">
+<meta property="og:url" content="https://wujun.org/manage-ou-with-powershell/index.html">
 <meta property="og:site_name" content="Jun&#39;s Blog">
-<meta property="og:description" content="Stay Hungry Stay Foolish">
+<meta property="og:description" content="OU的管理主要有新增，修改和删除，下面分别简单介绍下：  直接创建一个Shanghai的OU，无任何其他参数： New-ADOrganizationalUnit   New-ADOrganizationalUnit -Name &amp;quot;Shanghai&amp;quot; -Path &amp;quot;DC=contoso,DC=com&amp;quot;  如下图      默认情况下创建的OU是带保护的，如果需">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/627f674cgy1fwql72le09j20j702xwer.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/627f674cgy1fwql96m5m8j20kp084t94.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/627f674cgy1fwqlo5kd7hj20l80d00tr.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/627f674cgy1fwqlsbbouwj20kg0dadgv.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/627f674cgy1fwqmyydlv9j20ho0dm758.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/627f674cgy1fwqmzc6zdfj20h40ebmy4.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/627f674cgy1fwqn5744r9j20p902tjs6.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/627f674cgy1fwqn5z9odgj20i70bhq3y.jpg">
+<meta property="og:updated_time" content="2018-10-30T15:13:52.999Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Jun&#39;s Blog">
-<meta name="twitter:description" content="Stay Hungry Stay Foolish">
+<meta name="twitter:title" content="Manage OU with PowerShell">
+<meta name="twitter:description" content="OU的管理主要有新增，修改和删除，下面分别简单介绍下：  直接创建一个Shanghai的OU，无任何其他参数： New-ADOrganizationalUnit   New-ADOrganizationalUnit -Name &amp;quot;Shanghai&amp;quot; -Path &amp;quot;DC=contoso,DC=com&amp;quot;  如下图      默认情况下创建的OU是带保护的，如果需">
+<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/627f674cgy1fwql72le09j20j702xwer.jpg">
 
 
 
@@ -118,13 +129,13 @@
 
 
 
-  <link rel="canonical" href="https://wujun.org/tags/Domain/">
+  <link rel="canonical" href="https://wujun.org/manage-ou-with-powershell/">
 
 
 
 
 
-  <title>Tag: Domain | Jun's Blog</title>
+  <title>Manage OU with PowerShell | Jun's Blog</title>
   
 
 
@@ -143,7 +154,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -237,52 +248,190 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>Domain<small>Tag</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://wujun.org/manage-ou-with-powershell/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="mkls">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://ws1.sinaimg.cn/large/627f674cly1fwqciaaeraj20qo0qotaf.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jun's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/install-domain-controller-with-powershell-on-windows-server-2016/" itemprop="url">
-              
-                <span itemprop="name">Windows Server 2016 Server Core 环境下安装DC</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">Manage OU with PowerShell</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-10-30T14:14:30+08:00" content="2018-10-30">
-          10-30
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-30T21:38:43+08:00">
+                2018-10-30
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>OU的管理主要有新增，修改和删除，下面分别简单介绍下：</p>
+<ol>
+<li><p>直接创建一个Shanghai的OU，无任何其他参数：</p>
+<pre><code>New-ADOrganizationalUnit 
+
+New-ADOrganizationalUnit -Name &quot;Shanghai&quot; -Path &quot;DC=contoso,DC=com&quot;
+</code></pre><p> 如下图</p>
+<p> <img src="https://ws1.sinaimg.cn/large/627f674cgy1fwql72le09j20j702xwer.jpg" alt="new-ou"></p>
+<p> <img src="https://ws1.sinaimg.cn/large/627f674cgy1fwql96m5m8j20kp084t94.jpg" alt="ou-info"></p>
+<p> 默认情况下创建的OU是带保护的，如果需要创建不带保护的，可以添加一个参数如下:</p>
+<pre><code>New-ADOrganizationalUnit -Name &quot;Tianjin&quot; -Path &quot;DC=contoso,DC=com&quot; -ProtectedFromAccidentalDeletion $False
+</code></pre><p> <img src="https://ws1.sinaimg.cn/large/627f674cgy1fwqlo5kd7hj20l80d00tr.jpg" alt="ou-without-protect"></p>
+<p> 创建一个子OU到指定的OU下</p>
+<p> 在shanghai OU下再创建一个Pudong的子OU为例:</p>
+<pre><code>New-ADOrganizationalUnit -Name  &quot;Pudong&quot; -Path &quot;OU=Shanghai,DC=contoso,dc=com&quot; -ProtectedFromAccidentalDeletion $False
+</code></pre><p> <img src="https://ws1.sinaimg.cn/large/627f674cgy1fwqlsbbouwj20kg0dadgv.jpg" alt="ou-pudong"></p>
+</li>
+<li><p>修改OU的设置</p>
+<pre><code>Set-ADOrganizationalUnit
+
+Set-ADOrganizationalUnit -Identity &quot;OU=Beijing,DC=contoso,DC=com&quot; -ProtectedFromAccidentalDeletion $False
+</code></pre><p> 以修改OU保护设置为例：<br> 修改前</p>
+<p> <img src="https://ws1.sinaimg.cn/large/627f674cgy1fwqmyydlv9j20ho0dm758.jpg" alt="before"></p>
+<p> 修改后</p>
+<p> <img src="https://ws1.sinaimg.cn/large/627f674cgy1fwqmzc6zdfj20h40ebmy4.jpg" alt="after"></p>
+</li>
+<li><p>删除OU </p>
+<p> 删除Beijing这个OU以及它的子OU</p>
+<pre><code>Remove-ADOrganizationalUnit -Identity &quot;OU=Beijing,DC=contoso,DC=com&quot; -Recursive
+</code></pre><p> <img src="https://ws1.sinaimg.cn/large/627f674cgy1fwqn5744r9j20p902tjs6.jpg" alt="delete-beijing-ou"></p>
+<p> <img src="https://ws1.sinaimg.cn/large/627f674cgy1fwqn5z9odgj20i70bhq3y.jpg" alt="delete-beijing-ou-1"></p>
+</li>
+<li></li>
+</ol>
+<p>Reference：</p>
+<p><a href="https://docs.microsoft.com/en-us/powershell/module/addsadministration/new-adorganizationalunit?view=win10-ps" target="_blank" rel="noopener">https://docs.microsoft.com/en-us/powershell/module/addsadministration/new-adorganizationalunit?view=win10-ps</a></p>
+<p><a href="https://docs.microsoft.com/en-us/powershell/module/addsadministration/set-adorganizationalunit?view=win10-ps" target="_blank" rel="noopener">https://docs.microsoft.com/en-us/powershell/module/addsadministration/set-adorganizationalunit?view=win10-ps</a></p>
+<p><a href="https://docs.microsoft.com/en-us/powershell/module/addsadministration/remove-adorganizationalunit?view=win10-ps" target="_blank" rel="noopener">https://docs.microsoft.com/en-us/powershell/module/addsadministration/remove-adorganizationalunit?view=win10-ps</a></p>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/PowerShell/" rel="tag"># PowerShell</a>
+          
+            <a href="/tags/OU/" rel="tag"># OU</a>
+          
+            <a href="/tags/Windows/" rel="tag"># Windows</a>
+          
+            <a href="/tags/Server/" rel="tag"># Server</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/install-domain-controller-with-powershell-on-windows-server-2016/" rel="next" title="Windows Server 2016 Server Core 环境下安装DC">
+                <i class="fa fa-chevron-left"></i> Windows Server 2016 Server Core 环境下安装DC
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -290,6 +439,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -535,6 +688,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
