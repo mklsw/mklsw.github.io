@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="blog,Hexo,Github,">
+  <meta name="keywords" content="Windows,Server,PowerShell,Domain,">
 
 
 
@@ -79,18 +79,26 @@
 
 
 
-<meta name="description" content="接前一篇博文，git已经安装配置完毕，接下来准备安装Hexo和更新到Github Pages.  Hexo 安装配置 https://hexo.io/zh-cn/docs/index.html  hexo new  写一篇博文Hexo g    生成静态文件hexo s    本地预览hexo d    分布出去  Github Pages 配置 https://pages.github.com/">
-<meta name="keywords" content="blog,Hexo,Github">
+<meta name="description" content="建议将DC安装在Server Core NO-GUI环境下 下面介绍一下在Server 2016 Server Core 环境下安装DC的步骤： &amp;gt; 安装之前需要确认好计算机名，IP地址 DNS等信息正确。   安装Domain Service 服务，使用如下命令： Install-WindowsFeature AD-Domain-Services -IncludeManagementToo">
+<meta name="keywords" content="Windows,Server,PowerShell,Domain">
 <meta property="og:type" content="article">
-<meta property="og:title" content="使用Github Pages 和 hexo搭建博客">
-<meta property="og:url" content="https://wujun.org/build-blog-with-github-pages-and-hexo/index.html">
+<meta property="og:title" content="Windows Server 2016 Server Core 环境下安装DC">
+<meta property="og:url" content="https://wujun.org/install-domain-controller-with-powershell-on-windows-server-2016/index.html">
 <meta property="og:site_name" content="Jun&#39;s Blog">
-<meta property="og:description" content="接前一篇博文，git已经安装配置完毕，接下来准备安装Hexo和更新到Github Pages.  Hexo 安装配置 https://hexo.io/zh-cn/docs/index.html  hexo new  写一篇博文Hexo g    生成静态文件hexo s    本地预览hexo d    分布出去  Github Pages 配置 https://pages.github.com/">
+<meta property="og:description" content="建议将DC安装在Server Core NO-GUI环境下 下面介绍一下在Server 2016 Server Core 环境下安装DC的步骤： &amp;gt; 安装之前需要确认好计算机名，IP地址 DNS等信息正确。   安装Domain Service 服务，使用如下命令： Install-WindowsFeature AD-Domain-Services -IncludeManagementToo">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-10-30T08:18:38.544Z">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/627f674cgy1fwqabzw5pfj20i40czdjf.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/627f674cgy1fwq9ct4uwdj20pt0443yi.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/627f674cgy1fwqa5rerj1j20q80dpgnm.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/627f674cgy1fwqaxz1m3vj20pm0bsdh0.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/627f674cgy1fwqamyqunaj20r90fjdio.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/627f674cgy1fwqaaiydurj20hd08jmy0.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/627f674cgy1fwqb152fczj20kn06275r.jpg">
+<meta property="og:updated_time" content="2018-10-30T08:10:52.631Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="使用Github Pages 和 hexo搭建博客">
-<meta name="twitter:description" content="接前一篇博文，git已经安装配置完毕，接下来准备安装Hexo和更新到Github Pages.  Hexo 安装配置 https://hexo.io/zh-cn/docs/index.html  hexo new  写一篇博文Hexo g    生成静态文件hexo s    本地预览hexo d    分布出去  Github Pages 配置 https://pages.github.com/">
+<meta name="twitter:title" content="Windows Server 2016 Server Core 环境下安装DC">
+<meta name="twitter:description" content="建议将DC安装在Server Core NO-GUI环境下 下面介绍一下在Server 2016 Server Core 环境下安装DC的步骤： &amp;gt; 安装之前需要确认好计算机名，IP地址 DNS等信息正确。   安装Domain Service 服务，使用如下命令： Install-WindowsFeature AD-Domain-Services -IncludeManagementToo">
+<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/627f674cgy1fwqabzw5pfj20i40czdjf.jpg">
 
 
 
@@ -120,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="https://wujun.org/build-blog-with-github-pages-and-hexo/">
+  <link rel="canonical" href="https://wujun.org/install-domain-controller-with-powershell-on-windows-server-2016/">
 
 
 
 
 
-  <title>使用Github Pages 和 hexo搭建博客 | Jun's Blog</title>
+  <title>Windows Server 2016 Server Core 环境下安装DC | Jun's Blog</title>
   
 
 
@@ -253,7 +261,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wujun.org/build-blog-with-github-pages-and-hexo/">
+    <link itemprop="mainEntityOfPage" href="https://wujun.org/install-domain-controller-with-powershell-on-windows-server-2016/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="mkls">
@@ -270,7 +278,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">使用Github Pages 和 hexo搭建博客</h1>
+          <h1 class="post-title" itemprop="name headline">Windows Server 2016 Server Core 环境下安装DC</h1>
         
 
         <div class="post-meta">
@@ -282,8 +290,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-27T22:05:18+08:00">
-                2018-10-27
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-30T14:14:30+08:00">
+                2018-10-30
               </time>
             
 
@@ -320,14 +328,34 @@
       
 
       
-        <p>接前一篇博文，git已经安装配置完毕，接下来准备安装Hexo和更新到Github Pages.</p>
-<ul>
-<li>Hexo 安装配置 <a href="https://hexo.io/zh-cn/docs/index.html" target="_blank" rel="noopener">https://hexo.io/zh-cn/docs/index.html</a></li>
-</ul>
-<p>hexo new  写一篇博文<br>Hexo g    生成静态文件<br>hexo s    本地预览<br>hexo d    分布出去</p>
-<ul>
-<li>Github Pages 配置 <a href="https://pages.github.com/" target="_blank" rel="noopener">https://pages.github.com/</a></li>
-</ul>
+        <p>建议将DC安装在Server Core NO-GUI环境下</p>
+<p>下面介绍一下在Server 2016 Server Core 环境下安装DC的步骤：</p>
+<pre><code>&gt; 安装之前需要确认好计算机名，IP地址 DNS等信息正确。
+</code></pre><p><img src="https://ws1.sinaimg.cn/large/627f674cgy1fwqabzw5pfj20i40czdjf.jpg" alt="sconfig"></p>
+<ol>
+<li><p>安装Domain Service 服务，使用如下命令：</p>
+<pre><code>Install-WindowsFeature AD-Domain-Services -IncludeManagementTools
+</code></pre><p>安装成功后可以看到提示</p>
+<p><img src="https://ws1.sinaimg.cn/large/627f674cgy1fwq9ct4uwdj20pt0443yi.jpg" alt="install-domain-services"></p>
+</li>
+<li><p>安装配置林中的第一台DC, 同时会提示需要你输入安全模式管理员密码</p>
+<pre><code>Install-ADDSForest -DomainName  mkls.com
+</code></pre><p> <img src="https://ws1.sinaimg.cn/large/627f674cgy1fwqa5rerj1j20q80dpgnm.jpg" alt="addsforst"></p>
+<p>确认重启后就安装完毕。</p>
+<p>如果是林中已经有域了，使用这个命令：</p>
+<pre><code>Install-ADDSDomainController  -DomainName &quot;mkls.com&quot; -credential $(get-credential)
+</code></pre><p> 验证通过后也会提示输入安全模式管理员密码,重启</p>
+<p> <img src="https://ws1.sinaimg.cn/large/627f674cgy1fwqaxz1m3vj20pm0bsdh0.jpg" alt="domain"></p>
+</li>
+<li><p>可以使用<code>DCDIAG</code>验证一下安装结果或查看一下服务情况</p>
+<pre><code>Get-Service adws,kdc,netlogon,dns
+</code></pre><p><img src="https://ws1.sinaimg.cn/large/627f674cgy1fwqamyqunaj20r90fjdio.jpg" alt="dcdiag"></p>
+<p><img src="https://ws1.sinaimg.cn/large/627f674cgy1fwqaaiydurj20hd08jmy0.jpg" alt="check-services"></p>
+<p>查看默认共享</p>
+<pre><code>Get-smbshare
+</code></pre><p><img src="https://ws1.sinaimg.cn/large/627f674cgy1fwqb152fczj20kn06275r.jpg" alt="share"></p>
+</li>
+</ol>
 
       
     </div>
@@ -345,11 +373,13 @@
       
         <div class="post-tags">
           
-            <a href="/tags/blog/" rel="tag"># blog</a>
+            <a href="/tags/Windows/" rel="tag"># Windows</a>
           
-            <a href="/tags/Hexo/" rel="tag"># Hexo</a>
+            <a href="/tags/Server/" rel="tag"># Server</a>
           
-            <a href="/tags/Github/" rel="tag"># Github</a>
+            <a href="/tags/PowerShell/" rel="tag"># PowerShell</a>
+          
+            <a href="/tags/Domain/" rel="tag"># Domain</a>
           
         </div>
       
@@ -362,8 +392,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/git/" rel="next" title="Git 新手配置">
-                <i class="fa fa-chevron-left"></i> Git 新手配置
+              <a href="/fix-an-error-occurred-while-attempting-to-connect-to-Hyper-V-server/" rel="next" title="Hyper-V An Error Occurred">
+                <i class="fa fa-chevron-left"></i> Hyper-V An Error Occurred
               </a>
             
           </div>
@@ -371,10 +401,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/install-hyper-v-on-windows-10/" rel="prev" title="Windows 10中安装Hyper-V">
-                Windows 10中安装Hyper-V <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
