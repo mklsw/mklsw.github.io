@@ -79,13 +79,13 @@
 
 
 
-<meta name="description" content="建议将DC安装在Server Core NO-GUI环境下 下面介绍一下在Server 2016 Server Core 环境下安装DC的步骤： &amp;gt; 安装之前需要确认好计算机名，IP地址 DNS等信息正确。   安装Domain Service 服务，使用如下命令： Install-WindowsFeature AD-Domain-Services -IncludeManagementToo">
+<meta name="description" content="建议将DC安装在Server Core NO-GUI环境下 下面介绍一下在Server 2016 Server Core 环境下安装DC的步骤：  安装之前需要确认好计算机名，IP地址 DNS等信息正确。  可以使用sconfig 快速配置      安装Domain Service 服务，使用如下命令： Install-WindowsFeature AD-Domain-Services -Inc">
 <meta name="keywords" content="Windows,Server,PowerShell,Domain">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Windows Server 2016 Server Core 环境下安装DC">
 <meta property="og:url" content="https://wujun.org/install-domain-controller-with-powershell-on-windows-server-2016/index.html">
 <meta property="og:site_name" content="Jun&#39;s Blog">
-<meta property="og:description" content="建议将DC安装在Server Core NO-GUI环境下 下面介绍一下在Server 2016 Server Core 环境下安装DC的步骤： &amp;gt; 安装之前需要确认好计算机名，IP地址 DNS等信息正确。   安装Domain Service 服务，使用如下命令： Install-WindowsFeature AD-Domain-Services -IncludeManagementToo">
+<meta property="og:description" content="建议将DC安装在Server Core NO-GUI环境下 下面介绍一下在Server 2016 Server Core 环境下安装DC的步骤：  安装之前需要确认好计算机名，IP地址 DNS等信息正确。  可以使用sconfig 快速配置      安装Domain Service 服务，使用如下命令： Install-WindowsFeature AD-Domain-Services -Inc">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/627f674cgy1fwqabzw5pfj20i40czdjf.jpg">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/627f674cgy1fwq9ct4uwdj20pt0443yi.jpg">
@@ -94,10 +94,10 @@
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/627f674cgy1fwqamyqunaj20r90fjdio.jpg">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/627f674cgy1fwqaaiydurj20hd08jmy0.jpg">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/627f674cgy1fwqb152fczj20kn06275r.jpg">
-<meta property="og:updated_time" content="2018-10-30T08:10:52.631Z">
+<meta property="og:updated_time" content="2018-10-30T08:27:39.471Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Windows Server 2016 Server Core 环境下安装DC">
-<meta name="twitter:description" content="建议将DC安装在Server Core NO-GUI环境下 下面介绍一下在Server 2016 Server Core 环境下安装DC的步骤： &amp;gt; 安装之前需要确认好计算机名，IP地址 DNS等信息正确。   安装Domain Service 服务，使用如下命令： Install-WindowsFeature AD-Domain-Services -IncludeManagementToo">
+<meta name="twitter:description" content="建议将DC安装在Server Core NO-GUI环境下 下面介绍一下在Server 2016 Server Core 环境下安装DC的步骤：  安装之前需要确认好计算机名，IP地址 DNS等信息正确。  可以使用sconfig 快速配置      安装Domain Service 服务，使用如下命令： Install-WindowsFeature AD-Domain-Services -Inc">
 <meta name="twitter:image" content="https://ws1.sinaimg.cn/large/627f674cgy1fwqabzw5pfj20i40czdjf.jpg">
 
 
@@ -330,8 +330,11 @@
       
         <p>建议将DC安装在Server Core NO-GUI环境下</p>
 <p>下面介绍一下在Server 2016 Server Core 环境下安装DC的步骤：</p>
-<pre><code>&gt; 安装之前需要确认好计算机名，IP地址 DNS等信息正确。
-</code></pre><p><img src="https://ws1.sinaimg.cn/large/627f674cgy1fwqabzw5pfj20i40czdjf.jpg" alt="sconfig"></p>
+<ol start="0">
+<li>安装之前需要确认好计算机名，IP地址 DNS等信息正确。</li>
+</ol>
+<p>可以使用<code>sconfig</code> 快速配置</p>
+<p>   <img src="https://ws1.sinaimg.cn/large/627f674cgy1fwqabzw5pfj20i40czdjf.jpg" alt="sconfig"></p>
 <ol>
 <li><p>安装Domain Service 服务，使用如下命令：</p>
 <pre><code>Install-WindowsFeature AD-Domain-Services -IncludeManagementTools
