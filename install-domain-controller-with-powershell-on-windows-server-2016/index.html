@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Windows,Server,PowerShell,Domain,">
+  <meta name="keywords" content="Windows,PowerShell,Server,Domain,">
 
 
 
@@ -80,7 +80,7 @@
 
 
 <meta name="description" content="建议将DC安装在Server Core NO-GUI环境下 下面介绍一下在Server 2016 Server Core 环境下安装DC的步骤：  安装之前需要确认好计算机名，IP地址 DNS等信息正确。  可以使用sconfig 快速配置   安装Domain Service 服务，使用如下命令： Install-WindowsFeature AD-Domain-Services -Includ">
-<meta name="keywords" content="Windows,Server,PowerShell,Domain">
+<meta name="keywords" content="Windows,PowerShell,Server,Domain">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Windows Server 2016 Server Core 环境下安装DC">
 <meta property="og:url" content="https://wujun.org/install-domain-controller-with-powershell-on-windows-server-2016/index.html">
@@ -91,10 +91,11 @@
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/627f674cgy1fwq9ct4uwdj20pt0443yi.jpg">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/627f674cgy1fwqa5rerj1j20q80dpgnm.jpg">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/627f674cgy1fwtrquchzfj20tx0ft764.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/627f674cgy1fwtrv05xaoj20qo0cptc1.jpg">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/627f674cgy1fwqamyqunaj20r90fjdio.jpg">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/627f674cgy1fwqaaiydurj20hd08jmy0.jpg">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/627f674cgy1fwqb152fczj20kn06275r.jpg">
-<meta property="og:updated_time" content="2018-11-02T08:01:23.556Z">
+<meta property="og:updated_time" content="2018-11-02T08:42:54.392Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Windows Server 2016 Server Core 环境下安装DC">
 <meta name="twitter:description" content="建议将DC安装在Server Core NO-GUI环境下 下面介绍一下在Server 2016 Server Core 环境下安装DC的步骤：  安装之前需要确认好计算机名，IP地址 DNS等信息正确。  可以使用sconfig 快速配置   安装Domain Service 服务，使用如下命令： Install-WindowsFeature AD-Domain-Services -Includ">
@@ -345,16 +346,12 @@
 </code></pre><p> <img src="https://ws1.sinaimg.cn/large/627f674cgy1fwqa5rerj1j20q80dpgnm.jpg" alt="addsforst"></p>
 <p> 继续等待</p>
 <p> <img src="https://ws1.sinaimg.cn/large/627f674cgy1fwtrquchzfj20tx0ft764.jpg" alt="reboot"><br>重启后安装完毕。</p>
+<p> 如果是林中已经有域了，安装完ADS后，使用下面这个命令：</p>
+<pre><code>Install-ADDSDomainController  -DomainName &quot;mkls.com&quot; -credential $(get-credential)
+</code></pre><p> 验证通过后也会提示输入安全模式管理员密码,重启</p>
+<p> <img src="https://ws1.sinaimg.cn/large/627f674cgy1fwtrv05xaoj20qo0cptc1.jpg" alt="domain"></p>
+<p> 后面的步骤和前面一样。</p>
 </li>
-</ol>
-<p>   如果是林中已经有域了，安装完ADS后，使用下面这个命令：</p>
-<pre><code>    Install-ADDSDomainController  -DomainName &quot;mkls.com&quot; -credential $(get-credential)
-验证通过后也会提示输入安全模式管理员密码,重启
-
-![domain](https://ws1.sinaimg.cn/large/627f674cgy1fwtrv05xaoj20qo0cptc1.jpg)
-
-后面的步骤和前面一样。
-</code></pre><ol start="3">
 <li><p>安装完成后，可以使用<code>DCDIAG</code>验证一下安装结果或查看一下服务情况</p>
 <pre><code>Get-Service adws,kdc,netlogon,dns
 </code></pre><p><img src="https://ws1.sinaimg.cn/large/627f674cgy1fwqamyqunaj20r90fjdio.jpg" alt="dcdiag"></p>
@@ -383,9 +380,9 @@
           
             <a href="/tags/Windows/" rel="tag"># Windows</a>
           
-            <a href="/tags/Server/" rel="tag"># Server</a>
-          
             <a href="/tags/PowerShell/" rel="tag"># PowerShell</a>
+          
+            <a href="/tags/Server/" rel="tag"># Server</a>
           
             <a href="/tags/Domain/" rel="tag"># Domain</a>
           
