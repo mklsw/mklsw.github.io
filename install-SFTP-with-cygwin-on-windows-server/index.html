@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="windows,powershell,">
+  <meta name="keywords" content="windows,server,sftp,ssh,">
 
 
 
@@ -79,26 +79,29 @@
 
 
 
-<meta name="description" content="windows 10 升级到1809后去官网下载RSAT时，发现从1809之后，这个工具已经内置在windows 10中，是一个按需安装的功能 即features on demand,不再需要额外的安装包。关于Features on demand可以参考此链接：featurn on demand 下面是安装的过程：  GUI 安装,比较简单,选自己需要的包就行，看图：      使用命令行安装，一">
-<meta name="keywords" content="windows,powershell">
+<meta name="description" content="因为安全的原因，公司内部的FTP需要升级成SFTP(SSH File Transfer Protocol),找了些资料有很多方案:  使用第三方付费软件，简单好用，但需要买很多license，不划算。  免费的软件，Solarwinds等,大都有用户量的限制，不能满足需求。  使用开源免费软件，有openssh-portable和Cygwin 两种方案。   考虑到目前的服务器OS还是2008 R">
+<meta name="keywords" content="windows,server,sftp,ssh">
 <meta property="og:type" content="article">
-<meta property="og:title" content="windows 10 1809 安装RSAT">
-<meta property="og:url" content="https://wujun.org/install-RSAT-in-windows10-after-1809/index.html">
+<meta property="og:title" content="install SFTP with cygwin on windows server">
+<meta property="og:url" content="https://wujun.org/install-SFTP-with-cygwin-on-windows-server/index.html">
 <meta property="og:site_name" content="Jun&#39;s Blog">
-<meta property="og:description" content="windows 10 升级到1809后去官网下载RSAT时，发现从1809之后，这个工具已经内置在windows 10中，是一个按需安装的功能 即features on demand,不再需要额外的安装包。关于Features on demand可以参考此链接：featurn on demand 下面是安装的过程：  GUI 安装,比较简单,选自己需要的包就行，看图：      使用命令行安装，一">
+<meta property="og:description" content="因为安全的原因，公司内部的FTP需要升级成SFTP(SSH File Transfer Protocol),找了些资料有很多方案:  使用第三方付费软件，简单好用，但需要买很多license，不划算。  免费的软件，Solarwinds等,大都有用户量的限制，不能满足需求。  使用开源免费软件，有openssh-portable和Cygwin 两种方案。   考虑到目前的服务器OS还是2008 R">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/627f674cgy1fwtkzw3k35j20wx0gvgqn.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/627f674cgy1fwtkevyvs1j20nc0p175a.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/627f674cgy1fwtl1460ajj20nb07vq2u.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/627f674cgy1fwtks4eivlj20mt0360sn.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/627f674cgy1fwtkw35pgyj20j20hn75e.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/627f674cgy1fwtjj5cjpqj20ml0eujrn.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/627f674cgy1fwtl3h6rwpj20910bswhq.jpg">
-<meta property="og:updated_time" content="2018-11-02T08:17:17.109Z">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/627f674cgy1fwzaw14te4j20fm0b73yt.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/627f674cgy1fwzblp1oyxj20sg0lc40g.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/627f674cgy1fwzbm6muqcj20fg0b93yo.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/627f674cgy1fwzbq2nmhbj20f00aut8w.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/627f674cgy1fwzbr7hw8lj20g50a0q38.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/627f674cgy1fwzcr6j94tj20g0085gls.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/627f674cgy1fwzdk5s0bcj20jg071q37.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/627f674cgy1fwzdkr1kevj20bc08dq2z.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/627f674cgy1fwzds0b8yyj20g7043wei.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/627f674cgy1fwzdvhp57vj20ej05w3yo.jpg">
+<meta property="og:updated_time" content="2018-11-07T04:36:12.794Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="windows 10 1809 安装RSAT">
-<meta name="twitter:description" content="windows 10 升级到1809后去官网下载RSAT时，发现从1809之后，这个工具已经内置在windows 10中，是一个按需安装的功能 即features on demand,不再需要额外的安装包。关于Features on demand可以参考此链接：featurn on demand 下面是安装的过程：  GUI 安装,比较简单,选自己需要的包就行，看图：      使用命令行安装，一">
-<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/627f674cgy1fwtkzw3k35j20wx0gvgqn.jpg">
+<meta name="twitter:title" content="install SFTP with cygwin on windows server">
+<meta name="twitter:description" content="因为安全的原因，公司内部的FTP需要升级成SFTP(SSH File Transfer Protocol),找了些资料有很多方案:  使用第三方付费软件，简单好用，但需要买很多license，不划算。  免费的软件，Solarwinds等,大都有用户量的限制，不能满足需求。  使用开源免费软件，有openssh-portable和Cygwin 两种方案。   考虑到目前的服务器OS还是2008 R">
+<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/627f674cgy1fwzaw14te4j20fm0b73yt.jpg">
 
 
 
@@ -128,13 +131,13 @@
 
 
 
-  <link rel="canonical" href="https://wujun.org/install-RSAT-in-windows10-after-1809/">
+  <link rel="canonical" href="https://wujun.org/install-SFTP-with-cygwin-on-windows-server/">
 
 
 
 
 
-  <title>windows 10 1809 安装RSAT | Jun's Blog</title>
+  <title>install SFTP with cygwin on windows server | Jun's Blog</title>
   
 
 
@@ -261,7 +264,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wujun.org/install-RSAT-in-windows10-after-1809/">
+    <link itemprop="mainEntityOfPage" href="https://wujun.org/install-SFTP-with-cygwin-on-windows-server/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="mkls">
@@ -278,7 +281,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">windows 10 1809 安装RSAT</h1>
+          <h1 class="post-title" itemprop="name headline">install SFTP with cygwin on windows server</h1>
         
 
         <div class="post-meta">
@@ -290,8 +293,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-01T21:30:20+08:00">
-                2018-11-01
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-07T09:50:32+08:00">
+                2018-11-07
               </time>
             
 
@@ -328,33 +331,90 @@
       
 
       
-        <p>windows 10 升级到1809后去官网下载RSAT时，发现从1809之后，这个工具已经内置在windows 10中，是一个按需安装的功能 即<code>features on demand</code>,不再需要额外的安装包。<br>关于<code>Features on demand</code>可以参考此链接：<a href="https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/features-on-demand-non-language-fod" target="_blank" rel="noopener">featurn on demand</a></p>
-<p>下面是安装的过程：</p>
-<ol start="0">
-<li><p>GUI 安装,比较简单,选自己需要的包就行，看图：</p>
-<p> <img src="https://ws1.sinaimg.cn/large/627f674cgy1fwtkzw3k35j20wx0gvgqn.jpg" alt="gui-install-rsat-1"></p>
-<p> <img src="https://ws1.sinaimg.cn/large/627f674cgy1fwtkevyvs1j20nc0p175a.jpg" alt="gui-install-rsat-2"></p>
+        <p>因为安全的原因，公司内部的FTP需要升级成SFTP(SSH File Transfer Protocol),找了些资料有很多方案:</p>
+<ul>
+<li><p>使用第三方付费软件，简单好用，但需要买很多license，不划算。</p>
 </li>
-<li><p>使用命令行安装，一条命令即可，安装所有的RSAT工具：</p>
-<pre><code>Get-WindowsCapability -Online | Where-Object { $_.Name -like &quot;RSAT*&quot; -and $_.State -eq &quot;NotPresent&quot; } | Add-WindowsCapability -Online
-</code></pre><p> <img src="https://ws1.sinaimg.cn/large/627f674cgy1fwtl1460ajj20nb07vq2u.jpg" alt="install-rsat-with-powershell"></p>
-<p> 如果报错了，如下图：</p>
-<p> <img src="https://ws1.sinaimg.cn/large/627f674cgy1fwtks4eivlj20mt0360sn.jpg" alt="rsat-powershell-error"></p>
-<p> 是因为windows update 环境里面使用WSUS 导致的，需要手动修改一下本地组策略,路径<br> <code>&quot;Computer Configuration\Administrative Templates\System\</code> </p>
-<p> <img src="https://ws1.sinaimg.cn/large/627f674cgy1fwtkw35pgyj20j20hn75e.jpg" alt="local-group-policy"></p>
+<li><p>免费的软件，<a href="https://www.solarwinds.等com/free-tools/free-sftp-server" target="_blank" rel="noopener">Solarwinds</a>等,大都有用户量的限制，不能满足需求。</p>
 </li>
-<li><p>如果只需要安装一个包，可以按一下步骤：<br>安装之前我们可以查看一下安装包信息：</p>
-<pre><code>DISM /online /get-capabilities /format:table |more
-</code></pre><p>比较多可以输出到本地查看：</p>
-<pre><code>DISM /online /get-capabilities /format:table &gt;C:\dism.txt
-</code></pre><p><img src="https://ws1.sinaimg.cn/large/627f674cgy1fwtjj5cjpqj20ml0eujrn.jpg" alt="available-features"></p>
+<li><p>使用开源免费软件，有<a href="https://github.com/PowerShell/openssh-portable" target="_blank" rel="noopener">openssh-portable</a>和<a href="https://www.cygwin.com/" target="_blank" rel="noopener">Cygwin</a> 两种方案。</p>
 </li>
-<li><p>找到包的名字复制下来，运行一下命令即可：</p>
-<pre><code>DISM.exe /Online /add-capability /CapabilityName:Rsat.ActiveDirectory.DS-LDS.Tools~~~~0.0.1.0
-</code></pre><p> 大功告成</p>
-<p> <img src="https://ws1.sinaimg.cn/large/627f674cgy1fwtl3h6rwpj20910bswhq.jpg" alt="sucess"></p>
+</ul>
+<p>考虑到目前的服务器OS还是2008 R2，最后还是选用了<code>Cygwin</code>.</p>
+<p><code>Cygwin</code> a large collection of GNU and Open Source tools which provide functionality similar to a Linux distribution on Windows. 就是一个可以提供在windows下运行一些和Linux功能差不多的一个开源工具包。 </p>
+<ol>
+<li><p>首先下载安装<code>Cygwin</code> 和 <code>Openssh</code></p>
+<p> <a href="https://cygwin.com/" target="_blank" rel="noopener">https://cygwin.com/</a></p>
+<p> 一路下一步安装 </p>
+<p> 注意选一个离自己比较近的安装源<br> <img src="https://ws1.sinaimg.cn/large/627f674cgy1fwzaw14te4j20fm0b73yt.jpg" alt="Cygwin-install-0"><br> 搜索SSH 安装 openssh</p>
+<p> <img src="https://ws1.sinaimg.cn/large/627f674cgy1fwzblp1oyxj20sg0lc40g.jpg" alt="cygwin-install-1"></p>
+<p> 等安装完毕</p>
+<p> <img src="https://ws1.sinaimg.cn/large/627f674cgy1fwzbm6muqcj20fg0b93yo.jpg" alt="cygwin-install-2"></p>
+<p> 安装完成会自动创建图标<br> <img src="https://ws1.sinaimg.cn/large/627f674cgy1fwzbq2nmhbj20f00aut8w.jpg" alt="cygwin-install-3"></p>
+<p> 安装完成后打开桌面的cygwin快捷方式使用 <code>sftp</code> 测试一下<br> <img src="https://ws1.sinaimg.cn/large/627f674cgy1fwzbr7hw8lj20g50a0q38.jpg" alt="cygwin-install-4"></p>
+</li>
+<li><p>创建stfp的本地用户名和文件目录.</p>
+<p> <code>lusrmgr.msc</code> 打开本地用户和组，创建一个<code>mkls</code>的用户和<code>sftp</code>的用户组，并把<code>mkls</code> 添加到 <code>sftp</code>.</p>
+<p> 或者使用<code>PowerShell</code> 创建</p>
+<pre><code>net  user mkls P@ssw0rd /add
+net  localgroup sftp /add
+net localgroup sftp mkls /add
+</code></pre><p> 创建用户文件目录,在C盘的SFTP_ROOT下</p>
+<pre><code>mkdir /C:/SFTP_ROOT/mkls
+</code></pre></li>
+<li><p>配置SSH </p>
+<pre><code>ssh-host-config
+
+should strictmodes be used?  no
+Should privilege separation be used? yes
+New local account &apos;sshd&apos;?  yes
+do you want to install sshd as a service? yes
+Enter the value of CYGWIN daemon?  sshd
+do you want to use a different name? no
+Create a new privileged user account &apos;cyg_server&apos;?  yes
+</code></pre></li>
+<li><p>配置使用windows Server本地用户或域账户登录SSH<br> 打开Cygwin Termin<br> 创建Group 和 Passwd文件</p>
+<pre><code>mkgroup &gt; /etc/group
+mkpasswd -cl &gt; /etc/passwd
+mkpasswd -d &gt; /etc/passwd
+chmod +rw /etc/group
+chmod +rw /etc/passwd
+</code></pre><p> <img src="https://ws1.sinaimg.cn/large/627f674cgy1fwzcr6j94tj20g0085gls.jpg" alt="user"></p>
+</li>
+<li><p>配置<code>fstab</code> 和 <code>nsswitch.conf</code></p>
+<p> <code>fstab</code> The /etc/fstab file is used to map Win32 drives and network shares into Cygwin’s internal POSIX directory tree. This is a similar concept to the typical UNIX fstab file<br> <a href="https://cygwin.com/cygwin-ug-net/using.html#mount-table" target="_blank" rel="noopener">https://cygwin.com/cygwin-ug-net/using.html#mount-table</a> 控制用户目录树</p>
+<p> <code>nsswitch.conf</code> it determines how passwd and group entries are generated.<br> <a href="https://cygwin.com/cygwin-ug-net/ntsec.html#ntsec-mapping-nsswitch" target="_blank" rel="noopener">https://cygwin.com/cygwin-ug-net/ntsec.html#ntsec-mapping-nsswitch</a><br> 只有passwd文件中的用户才能登陆，如果使用域账户登录，可以不用配置.</p>
+<p> 在/etc/fstab 文件中加入以下配置：</p>
+<pre><code>C:/cygwin64 / ntfs override,binary,noacl 0 0
+C:/SFTP_ROOT /home ntfs override,binary,noacl 0 0
+C:/cygwin64/bin /usr/bin ntfs override,binary,noacl 0 0
+C:/cygwin64/lib /usr/lib ntfs override,binary,noacl 0 0
+C:/cygwin64/etc/terminfo /usr/share/terminfo ntfs override,binary,noacl 0 0
+</code></pre><p> <img src="https://ws1.sinaimg.cn/large/627f674cgy1fwzdk5s0bcj20jg071q37.jpg" alt="fstab"></p>
+<p> 在/etc/nsswitch.conf 中添加以下配置：</p>
+<pre><code>passwd:   files
+group:    files
+</code></pre><p> <img src="https://ws1.sinaimg.cn/large/627f674cgy1fwzdkr1kevj20bc08dq2z.jpg" alt="nsswitch"></p>
+</li>
+<li><p>启用SSHD服务</p>
+<pre><code>net start sshd
+net stop sshd
+</code></pre></li>
+<li><p>防火墙配置</p>
+<p> inbound 和 outbound 添加TCP 22端口到防火墙允许列表</p>
 </li>
 </ol>
+<ol start="8">
+<li><p>测试</p>
+<p> 本地测试<br> <img src="https://ws1.sinaimg.cn/large/627f674cgy1fwzds0b8yyj20g7043wei.jpg" alt="sftp"></p>
+<p> 远程使用 <code>Putty</code> 或 <code>Winscp</code>连接测试<br> <img src="https://ws1.sinaimg.cn/large/627f674cgy1fwzdvhp57vj20ej05w3yo.jpg" alt="remote-test"></p>
+</li>
+</ol>
+<p>Reference:</p>
+<p><a href="https://cygwin.com" target="_blank" rel="noopener">https://cygwin.com</a></p>
+<p><a href="https://sites.google.com/site/georgesporacle/linux/tools/sftp/create-sftp-server-using-cygwin" target="_blank" rel="noopener">https://sites.google.com/site/georgesporacle/linux/tools/sftp/create-sftp-server-using-cygwin</a></p>
+<p><a href="https://comm.support.ca.com/kb/how-to-configure-openssh-on-windows-2008-for-use-with-ehealth-63x/kb000020979" target="_blank" rel="noopener">https://comm.support.ca.com/kb/how-to-configure-openssh-on-windows-2008-for-use-with-ehealth-63x/kb000020979</a></p>
+<p><a href="https://www.youtube.com/watch?v=CXzBdVXjKGU" target="_blank" rel="noopener">https://www.youtube.com/watch?v=CXzBdVXjKGU</a></p>
 
       
     </div>
@@ -374,7 +434,11 @@
           
             <a href="/tags/windows/" rel="tag"># windows</a>
           
-            <a href="/tags/powershell/" rel="tag"># powershell</a>
+            <a href="/tags/server/" rel="tag"># server</a>
+          
+            <a href="/tags/sftp/" rel="tag"># sftp</a>
+          
+            <a href="/tags/ssh/" rel="tag"># ssh</a>
           
         </div>
       
@@ -387,8 +451,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/manage-ou-with-powershell/" rel="next" title="Manage OU with PowerShell">
-                <i class="fa fa-chevron-left"></i> Manage OU with PowerShell
+              <a href="/install-RSAT-in-windows10-after-1809/" rel="next" title="windows 10 1809 安装RSAT">
+                <i class="fa fa-chevron-left"></i> windows 10 1809 安装RSAT
               </a>
             
           </div>
@@ -396,10 +460,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/install-SFTP-with-cygwin-on-windows-server/" rel="prev" title="install SFTP with cygwin on windows server">
-                install SFTP with cygwin on windows server <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
