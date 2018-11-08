@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="Windows,Server,sftp,ssh,">
 
 
 
@@ -79,16 +79,21 @@
 
 
 
-<meta name="description" content="Stay Hungry Stay Foolish">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Jun&#39;s Blog">
-<meta property="og:url" content="https://wujun.org/archives/2018/index.html">
+<meta name="description" content="接前面一篇文章 介绍了使用cygwin来配置SFTP，今天讲一下使用openssh-portable的配置。 openssh-portable是微软自己折腾出来的一个东西，相对来说比cygwin更加容易配置。另外从Win 1803 开始openssh 已经成为了windows的一个内置程序，和RSAT一样按需安装。下面分享一下安装过程： 环境是Windows Server 2008 R2 64 位">
+<meta name="keywords" content="Windows,Server,sftp,ssh">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用openssh-portable 在windows server上安装SFTP">
+<meta property="og:url" content="https://wujun.org/install-openssh-on-windows-server/index.html">
 <meta property="og:site_name" content="Jun&#39;s Blog">
-<meta property="og:description" content="Stay Hungry Stay Foolish">
+<meta property="og:description" content="接前面一篇文章 介绍了使用cygwin来配置SFTP，今天讲一下使用openssh-portable的配置。 openssh-portable是微软自己折腾出来的一个东西，相对来说比cygwin更加容易配置。另外从Win 1803 开始openssh 已经成为了windows的一个内置程序，和RSAT一样按需安装。下面分享一下安装过程： 环境是Windows Server 2008 R2 64 位">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/627f674cgy1fx0foh498gj20i60bm0sr.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/627f674cgy1fx0fuuhg3xj20m20gd0tp.jpg">
+<meta property="og:updated_time" content="2018-11-08T02:31:45.326Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Jun&#39;s Blog">
-<meta name="twitter:description" content="Stay Hungry Stay Foolish">
+<meta name="twitter:title" content="使用openssh-portable 在windows server上安装SFTP">
+<meta name="twitter:description" content="接前面一篇文章 介绍了使用cygwin来配置SFTP，今天讲一下使用openssh-portable的配置。 openssh-portable是微软自己折腾出来的一个东西，相对来说比cygwin更加容易配置。另外从Win 1803 开始openssh 已经成为了windows的一个内置程序，和RSAT一样按需安装。下面分享一下安装过程： 环境是Windows Server 2008 R2 64 位">
+<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/627f674cgy1fx0foh498gj20i60bm0sr.jpg">
 
 
 
@@ -118,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="https://wujun.org/archives/2018/">
+  <link rel="canonical" href="https://wujun.org/install-openssh-on-windows-server/">
 
 
 
 
 
-  <title>Archive | Jun's Blog</title>
+  <title>使用openssh-portable 在windows server上安装SFTP | Jun's Blog</title>
   
 
 
@@ -143,7 +148,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -237,387 +242,182 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://wujun.org/install-openssh-on-windows-server/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="mkls">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://ws1.sinaimg.cn/large/627f674cly1fwqciaaeraj20qo0qotaf.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jun's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">使用openssh-portable 在windows server上安装SFTP</h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-08T09:56:22+08:00">
+                2018-11-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        
-        Um..! 10 posts in total. Keep on posting.
-      </span>
 
-      
-
-        
-        
-        
-
-        
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2018">2018</h1>
-          </div>
-        
-        
+            
+          
 
-        
+          
+          
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/install-openssh-on-windows-server/" itemprop="url">
-              
-                <span itemprop="name">使用openssh-portable 在windows server上安装SFTP</span>
-              
-            </a>
-        
-      </h2>
+          
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-11-08T09:56:22+08:00" content="2018-11-08">
-          11-08
-        </time>
-      </div>
+          
 
-    </header>
-  </article>
+        </div>
+      </header>
+    
 
-
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/install-SFTP-with-cygwin-on-windows-server/" itemprop="url">
-              
-                <span itemprop="name">使用cygwin在windows server上安装SFTP</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-11-07T09:50:32+08:00" content="2018-11-07">
-          11-07
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
+      
+        <p>接前面<a href="https://wujun.org/install-SFTP-with-cygwin-on-windows-server/">一篇文章</a> 介绍了使用<code>cygwin</code>来配置SFTP，今天讲一下使用<code>openssh-portable</code>的配置。</p>
+<p><code>openssh-portable</code>是微软自己折腾出来的一个东西，相对来说比<code>cygwin</code>更加容易配置。另外从Win 1803 开始<code>openssh</code> 已经成为了windows的一个内置程序，和<a href="https://wujun.org/install-RSAT-in-windows10-after-1809/">RSAT</a>一样按需安装。<br>下面分享一下安装过程：</p>
+<p>环境是Windows Server 2008 R2 64 位</p>
+<ol>
+<li><p>下载最新版的<code>openssh-portable</code>包</p>
+<p>下载地址：<a href="https://github.com/PowerShell/Win32-OpenSSH/releases" target="_blank" rel="noopener">https://github.com/PowerShell/Win32-OpenSSH/releases</a> </p>
+</li>
+<li><p>解压到<code>C:\Program Files\OpenSSH64</code></p>
+</li>
+<li><p>安装<code>openssh</code>,使用管理员权限打开cmd</p>
+<pre><code>cd: C:\Program Files\OpenSSH64
 
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/install-RSAT-in-windows10-after-1809/" itemprop="url">
-              
-                <span itemprop="name">windows 10 1809 安装RSAT</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-11-01T21:30:20+08:00" content="2018-11-01">
-          11-01
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+powershell.exe -ExecutionPolicy Bypass -File install-sshd.ps1
+</code></pre><p> 安装成功后可以看到提示</p>
+</li>
+<li><p>开启防火墙22端口，如果防火墙已经关闭，可以不用设置。</p>
+<pre><code>netsh advfirewall firewall add rule name=sshd dir=in action=allow protocol=TCP localport=22
+</code></pre><p> 如果是windows server 2012以上的版本运行一下命令：</p>
+<pre><code>New-NetFirewallRule -Name sshd -DisplayName &apos;OpenSSH Server (sshd)&apos; -Enabled True -Direction Inbound -Protocol TCP -Action Allow -LocalPort 22
+</code></pre></li>
+<li><p>启动SSHD服务</p>
+<pre><code>net start sshd
+</code></pre><p><img src="https://ws1.sinaimg.cn/large/627f674cgy1fx0foh498gj20i60bm0sr.jpg" alt="install-sshd"></p>
+</li>
+</ol>
+<p>测试：<br><img src="https://ws1.sinaimg.cn/large/627f674cgy1fx0fuuhg3xj20m20gd0tp.jpg" alt="putty-test"></p>
+<p>如果需要启用域账户登录，可以添加配置，参考官方文档:</p>
+<p><code>sshd-config</code> <a href="https://github.com/PowerShell/Win32-OpenSSH/wiki/sshd_config" target="_blank" rel="noopener">https://github.com/PowerShell/Win32-OpenSSH/wiki/sshd_config</a></p>
+<p>Rreference:</p>
+<p><a href="https://github.com/PowerShell/Win32-OpenSSH/wiki" target="_blank" rel="noopener">https://github.com/PowerShell/Win32-OpenSSH/wiki</a></p>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/manage-ou-with-powershell/" itemprop="url">
-              
-                <span itemprop="name">Manage OU with PowerShell</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-10-30T21:38:43+08:00" content="2018-10-30">
-          10-30
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/install-domain-controller-with-powershell-on-windows-server-2016/" itemprop="url">
-              
-                <span itemprop="name">Windows Server 2016 Server Core 环境下安装DC</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-10-30T14:14:30+08:00" content="2018-10-30">
-          10-30
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/fix-an-error-occurred-while-attempting-to-connect-to-Hyper-V-server/" itemprop="url">
-              
-                <span itemprop="name">Hyper-V An Error Occurred</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-10-29T16:37:12+08:00" content="2018-10-29">
-          10-29
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/install-hyper-v-on-windows-10/" itemprop="url">
-              
-                <span itemprop="name">Windows 10中安装Hyper-V</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-10-28T12:54:59+08:00" content="2018-10-28">
-          10-28
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/build-blog-with-github-pages-and-hexo/" itemprop="url">
-              
-                <span itemprop="name">使用Github Pages 和 hexo搭建博客</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-10-27T22:05:18+08:00" content="2018-10-27">
-          10-27
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/git/" itemprop="url">
-              
-                <span itemprop="name">Git 新手配置</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-10-27T12:05:18+08:00" content="2018-10-27">
-          10-27
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/start/" itemprop="url">
-              
-                <span itemprop="name">Start</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-10-26T16:05:18+08:00" content="2018-10-26">
-          10-26
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Windows/" rel="tag"># Windows</a>
+          
+            <a href="/tags/Server/" rel="tag"># Server</a>
+          
+            <a href="/tags/sftp/" rel="tag"># sftp</a>
+          
+            <a href="/tags/ssh/" rel="tag"># ssh</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/install-SFTP-with-cygwin-on-windows-server/" rel="next" title="使用cygwin在windows server上安装SFTP">
+                <i class="fa fa-chevron-left"></i> 使用cygwin在windows server上安装SFTP
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -625,6 +425,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -862,6 +666,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
