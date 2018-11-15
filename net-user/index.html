@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="windows,powershell,server,">
+  <meta name="keywords" content="powershell,user,">
 
 
 
@@ -79,27 +79,26 @@
 
 
 
-<meta name="description" content="OU的管理主要有新增，修改和删除，下面分别简单介绍下：  直接创建一个Shanghai的OU，无任何其他参数： New-ADOrganizationalUnit   New-ADOrganizationalUnit -Name &amp;quot;Shanghai&amp;quot; -Path &amp;quot;DC=contoso,DC=com&amp;quot;  如下图      默认情况下创建的OU是带保护的，如果需">
-<meta name="keywords" content="windows,powershell,server">
+<meta name="description" content="学习使用powershell来管理用户时想起net user，但有些参数细节有点模糊，再回顾一下。 net user的用法: net user ? 或net help user 查看语法 增删查改 PS C:\WINDOWS\system32&amp;gt; net user ? The syntax of this command is:  NET USER  [username [password |">
+<meta name="keywords" content="powershell,user">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Manage OU with PowerShell">
-<meta property="og:url" content="https://wujun.org/manage-ou-with-powershell/index.html">
+<meta property="og:title" content="net user 用法">
+<meta property="og:url" content="https://wujun.org/net-user/index.html">
 <meta property="og:site_name" content="Jun&#39;s Blog">
-<meta property="og:description" content="OU的管理主要有新增，修改和删除，下面分别简单介绍下：  直接创建一个Shanghai的OU，无任何其他参数： New-ADOrganizationalUnit   New-ADOrganizationalUnit -Name &amp;quot;Shanghai&amp;quot; -Path &amp;quot;DC=contoso,DC=com&amp;quot;  如下图      默认情况下创建的OU是带保护的，如果需">
+<meta property="og:description" content="学习使用powershell来管理用户时想起net user，但有些参数细节有点模糊，再回顾一下。 net user的用法: net user ? 或net help user 查看语法 增删查改 PS C:\WINDOWS\system32&amp;gt; net user ? The syntax of this command is:  NET USER  [username [password |">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/627f674cgy1fwql72le09j20j702xwer.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/627f674cgy1fwql96m5m8j20kp084t94.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/627f674cgy1fwqlo5kd7hj20l80d00tr.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/627f674cgy1fwqlsbbouwj20kg0dadgv.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/627f674cgy1fwqmyydlv9j20ho0dm758.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/627f674cgy1fwqmzc6zdfj20h40ebmy4.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/627f674cgy1fwqn5744r9j20p902tjs6.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/627f674cgy1fwqn5z9odgj20i70bhq3y.jpg">
-<meta property="og:updated_time" content="2018-11-08T02:41:21.567Z">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/627f674cgy1fx8k10hstbj20fl03k743.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/627f674cgy1fx8k8ehpjdj20cq0aidfs.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/627f674cgy1fx8ku6maxmj20b102bjr6.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/627f674cgy1fx8la6lyc2j20eb0200si.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/627f674cgy1fx8ldkfcuqj20fi0mldgc.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/627f674cgy1fx8lgkavhoj20b201wq2p.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/627f674cgy1fx8lu4def2j20nc0b2t8q.jpg">
+<meta property="og:updated_time" content="2018-11-15T03:58:22.701Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Manage OU with PowerShell">
-<meta name="twitter:description" content="OU的管理主要有新增，修改和删除，下面分别简单介绍下：  直接创建一个Shanghai的OU，无任何其他参数： New-ADOrganizationalUnit   New-ADOrganizationalUnit -Name &amp;quot;Shanghai&amp;quot; -Path &amp;quot;DC=contoso,DC=com&amp;quot;  如下图      默认情况下创建的OU是带保护的，如果需">
-<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/627f674cgy1fwql72le09j20j702xwer.jpg">
+<meta name="twitter:title" content="net user 用法">
+<meta name="twitter:description" content="学习使用powershell来管理用户时想起net user，但有些参数细节有点模糊，再回顾一下。 net user的用法: net user ? 或net help user 查看语法 增删查改 PS C:\WINDOWS\system32&amp;gt; net user ? The syntax of this command is:  NET USER  [username [password |">
+<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/627f674cgy1fx8k10hstbj20fl03k743.jpg">
 
 
 
@@ -129,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="https://wujun.org/manage-ou-with-powershell/">
+  <link rel="canonical" href="https://wujun.org/net-user/">
 
 
 
 
 
-  <title>Manage OU with PowerShell | Jun's Blog</title>
+  <title>net user 用法 | Jun's Blog</title>
   
 
 
@@ -262,7 +261,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wujun.org/manage-ou-with-powershell/">
+    <link itemprop="mainEntityOfPage" href="https://wujun.org/net-user/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="mkls">
@@ -279,7 +278,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Manage OU with PowerShell</h1>
+          <h1 class="post-title" itemprop="name headline">net user 用法</h1>
         
 
         <div class="post-meta">
@@ -291,8 +290,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-30T21:38:43+08:00">
-                2018-10-30
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-09T15:39:38+08:00">
+                2018-11-09
               </time>
             
 
@@ -329,44 +328,44 @@
       
 
       
-        <p>OU的管理主要有新增，修改和删除，下面分别简单介绍下：</p>
-<ol>
-<li><p>直接创建一个Shanghai的OU，无任何其他参数：</p>
-<pre><code>New-ADOrganizationalUnit 
+        <p>学习使用<code>powershell</code>来管理用户时想起<code>net user</code>，但有些参数细节有点模糊，再回顾一下。</p>
+<p><code>net user</code>的用法:</p>
+<p><code>net user ?</code> 或<code>net help user</code> 查看语法 增删查改</p>
+<pre><code>PS C:\WINDOWS\system32&gt; net user ?
+The syntax of this command is:
 
-New-ADOrganizationalUnit -Name &quot;Shanghai&quot; -Path &quot;DC=contoso,DC=com&quot;
-</code></pre><p> 如下图</p>
-<p> <img src="https://ws1.sinaimg.cn/large/627f674cgy1fwql72le09j20j702xwer.jpg" alt="new-ou"></p>
-<p> <img src="https://ws1.sinaimg.cn/large/627f674cgy1fwql96m5m8j20kp084t94.jpg" alt="ou-info"></p>
-<p> 默认情况下创建的OU是带保护的，如果需要创建不带保护的，可以添加一个参数如下:</p>
-<pre><code>New-ADOrganizationalUnit -Name &quot;Tianjin&quot; -Path &quot;DC=contoso,DC=com&quot; -ProtectedFromAccidentalDeletion $False
-</code></pre><p> <img src="https://ws1.sinaimg.cn/large/627f674cgy1fwqlo5kd7hj20l80d00tr.jpg" alt="ou-without-protect"></p>
-<p> 创建一个子OU到指定的OU下</p>
-<p> 在shanghai OU下再创建一个Pudong的子OU为例:</p>
-<pre><code>New-ADOrganizationalUnit -Name  &quot;Pudong&quot; -Path &quot;OU=Shanghai,DC=contoso,dc=com&quot; -ProtectedFromAccidentalDeletion $False
-</code></pre><p> <img src="https://ws1.sinaimg.cn/large/627f674cgy1fwqlsbbouwj20kg0dadgv.jpg" alt="ou-pudong"></p>
+NET USER
+ [username [password | *] [options]] [/DOMAIN]
+ username {password | *} /ADD [options] [/DOMAIN]
+ username [/DELETE] [/DOMAIN]
+ username [/TIMES:{times | ALL}]
+ username [/ACTIVE: {YES | NO}]
+</code></pre><ol>
+<li><p>查看用户， <code>net user</code>不加任何参数会直接显示所用的本地用户信息</p>
+<pre><code>net user 
+</code></pre><p> <img src="https://ws1.sinaimg.cn/large/627f674cgy1fx8k10hstbj20fl03k743.jpg" alt="get-net-user"></p>
+<p> <code>net user</code> 后面加了参数<code>username</code> 会显示该用户的所有信息.</p>
+<p> <img src="https://ws1.sinaimg.cn/large/627f674cgy1fx8k8ehpjdj20cq0aidfs.jpg" alt="get-net-user-username"></p>
 </li>
-<li><p>修改OU的设置</p>
-<pre><code>Set-ADOrganizationalUnit
-
-Set-ADOrganizationalUnit -Identity &quot;OU=Beijing,DC=contoso,DC=com&quot; -ProtectedFromAccidentalDeletion $False
-</code></pre><p> 以修改OU保护设置为例：<br> 修改前</p>
-<p> <img src="https://ws1.sinaimg.cn/large/627f674cgy1fwqmyydlv9j20ho0dm758.jpg" alt="before"></p>
-<p> 修改后</p>
-<p> <img src="https://ws1.sinaimg.cn/large/627f674cgy1fwqmzc6zdfj20h40ebmy4.jpg" alt="after"></p>
+<li><p>新增一个本地用户</p>
+<pre><code>net user uesrname  * /add
+</code></pre><p> <img src="https://ws1.sinaimg.cn/large/627f674cgy1fx8ku6maxmj20b102bjr6.jpg" alt="add-local-user">    </p>
 </li>
-<li><p>删除OU </p>
-<p> 删除Beijing这个OU以及它的子OU</p>
-<pre><code>Remove-ADOrganizationalUnit -Identity &quot;OU=Beijing,DC=contoso,DC=com&quot; -Recursive
-</code></pre><p> <img src="https://ws1.sinaimg.cn/large/627f674cgy1fwqn5744r9j20p902tjs6.jpg" alt="delete-beijing-ou"></p>
-<p> <img src="https://ws1.sinaimg.cn/large/627f674cgy1fwqn5z9odgj20i70bhq3y.jpg" alt="delete-beijing-ou-1"></p>
+<li><p>修改一个用户信息，修改的参数也可以直接在新增用户时设置</p>
+<pre><code>net user username /option
+</code></pre><p> 比如修改用户的全名</p>
+<pre><code>net user mkls /fullname:&quot;jun wu&quot;
+</code></pre><p> <img src="https://ws1.sinaimg.cn/large/627f674cgy1fx8la6lyc2j20eb0200si.jpg" alt="add-fullname"></p>
+<p> 可以使用<code>net help user</code>查看更多可以修改的<code>option</code>，常用的只有一个<code>active</code></p>
+<p> <img src="https://ws1.sinaimg.cn/large/627f674cgy1fx8ldkfcuqj20fi0mldgc.jpg" alt="option"></p>
 </li>
-<li></li>
+<li><p>删除用户</p>
+<pre><code>net user  username /delete
+</code></pre><p> <img src="https://ws1.sinaimg.cn/large/627f674cgy1fx8lgkavhoj20b201wq2p.jpg" alt="delete-user"></p>
+</li>
 </ol>
-<p>Reference：</p>
-<p><a href="https://docs.microsoft.com/en-us/powershell/module/addsadministration/new-adorganizationalunit?view=win10-ps" target="_blank" rel="noopener">https://docs.microsoft.com/en-us/powershell/module/addsadministration/new-adorganizationalunit?view=win10-ps</a></p>
-<p><a href="https://docs.microsoft.com/en-us/powershell/module/addsadministration/set-adorganizationalunit?view=win10-ps" target="_blank" rel="noopener">https://docs.microsoft.com/en-us/powershell/module/addsadministration/set-adorganizationalunit?view=win10-ps</a></p>
-<p><a href="https://docs.microsoft.com/en-us/powershell/module/addsadministration/remove-adorganizationalunit?view=win10-ps" target="_blank" rel="noopener">https://docs.microsoft.com/en-us/powershell/module/addsadministration/remove-adorganizationalunit?view=win10-ps</a></p>
+<p><code>net</code> 的用法有很多，除了<code>net user</code>,最常用的就是<code>net use</code> 写一个共享的脚本，<code>net share</code> 查看共享等。具体用法都会慢慢更新。借助万能的<code>help</code>命令慢慢尝试，最后都转为<code>powershell</code>.</p>
+<p><img src="https://ws1.sinaimg.cn/large/627f674cgy1fx8lu4def2j20nc0b2t8q.jpg" alt="net"></p>
 
       
     </div>
@@ -384,11 +383,9 @@ Set-ADOrganizationalUnit -Identity &quot;OU=Beijing,DC=contoso,DC=com&quot; -Pro
       
         <div class="post-tags">
           
-            <a href="/tags/windows/" rel="tag"># windows</a>
-          
             <a href="/tags/powershell/" rel="tag"># powershell</a>
           
-            <a href="/tags/server/" rel="tag"># server</a>
+            <a href="/tags/user/" rel="tag"># user</a>
           
         </div>
       
@@ -401,8 +398,8 @@ Set-ADOrganizationalUnit -Identity &quot;OU=Beijing,DC=contoso,DC=com&quot; -Pro
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/install-domain-controller-with-powershell-on-windows-server-2016/" rel="next" title="Windows Server 2016 Server Core 环境下安装DC">
-                <i class="fa fa-chevron-left"></i> Windows Server 2016 Server Core 环境下安装DC
+              <a href="/install-openssh-on-windows-server/" rel="next" title="使用openssh-portable 在windows server上安装SSH">
+                <i class="fa fa-chevron-left"></i> 使用openssh-portable 在windows server上安装SSH
               </a>
             
           </div>
@@ -410,10 +407,6 @@ Set-ADOrganizationalUnit -Identity &quot;OU=Beijing,DC=contoso,DC=com&quot; -Pro
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/install-RSAT-in-windows10-after-1809/" rel="prev" title="windows 10 1809 安装RSAT">
-                windows 10 1809 安装RSAT <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
