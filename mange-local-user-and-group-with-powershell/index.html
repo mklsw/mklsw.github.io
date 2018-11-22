@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="windows,powershell,server,">
+  <meta name="keywords" content="powershell,user,group,">
 
 
 
@@ -79,27 +79,18 @@
 
 
 
-<meta name="description" content="建议将DC安装在Server Core NO-GUI环境下 下面介绍一下在Server 2016 Server Core 环境下安装DC的步骤：  安装之前需要确认好计算机名，IP地址 DNS等信息正确。  可以使用sconfig 快速配置   安装Domain Service 服务，使用如下命令： Install-WindowsFeature AD-Domain-Services -Includ">
-<meta name="keywords" content="windows,powershell,server">
+<meta name="description" content="记录一下学习powershell管理本地用户和组的一些笔记： 管理本地账户时会用到的命令：    command Discription     Add-LocalGroupMember Adds members to a local group.   Disabale-LocalUser Disable a local user account.   Enable-Localuser Enabl">
+<meta name="keywords" content="powershell,user,group">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Windows Server 2016 Server Core 环境下安装DC">
-<meta property="og:url" content="https://wujun.org/install-domain-controller-with-powershell-on-windows-server-2016/index.html">
+<meta property="og:title" content="使用PowerShell管理本地用户和组">
+<meta property="og:url" content="https://wujun.org/mange-local-user-and-group-with-powershell/index.html">
 <meta property="og:site_name" content="Jun&#39;s Blog">
-<meta property="og:description" content="建议将DC安装在Server Core NO-GUI环境下 下面介绍一下在Server 2016 Server Core 环境下安装DC的步骤：  安装之前需要确认好计算机名，IP地址 DNS等信息正确。  可以使用sconfig 快速配置   安装Domain Service 服务，使用如下命令： Install-WindowsFeature AD-Domain-Services -Includ">
+<meta property="og:description" content="记录一下学习powershell管理本地用户和组的一些笔记： 管理本地账户时会用到的命令：    command Discription     Add-LocalGroupMember Adds members to a local group.   Disabale-LocalUser Disable a local user account.   Enable-Localuser Enabl">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/627f674cgy1fwqabzw5pfj20i40czdjf.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/627f674cgy1fwq9ct4uwdj20pt0443yi.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/627f674cgy1fwqa5rerj1j20q80dpgnm.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/627f674cgy1fwtrquchzfj20tx0ft764.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/627f674cgy1fwtrv05xaoj20qo0cptc1.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/627f674cgy1fwqamyqunaj20r90fjdio.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/627f674cgy1fwqaaiydurj20hd08jmy0.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/627f674cgy1fwqb152fczj20kn06275r.jpg">
-<meta property="og:updated_time" content="2018-11-08T03:48:25.089Z">
+<meta property="og:updated_time" content="2018-11-22T03:29:42.682Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Windows Server 2016 Server Core 环境下安装DC">
-<meta name="twitter:description" content="建议将DC安装在Server Core NO-GUI环境下 下面介绍一下在Server 2016 Server Core 环境下安装DC的步骤：  安装之前需要确认好计算机名，IP地址 DNS等信息正确。  可以使用sconfig 快速配置   安装Domain Service 服务，使用如下命令： Install-WindowsFeature AD-Domain-Services -Includ">
-<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/627f674cgy1fwqabzw5pfj20i40czdjf.jpg">
+<meta name="twitter:title" content="使用PowerShell管理本地用户和组">
+<meta name="twitter:description" content="记录一下学习powershell管理本地用户和组的一些笔记： 管理本地账户时会用到的命令：    command Discription     Add-LocalGroupMember Adds members to a local group.   Disabale-LocalUser Disable a local user account.   Enable-Localuser Enabl">
 
 
 
@@ -129,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="https://wujun.org/install-domain-controller-with-powershell-on-windows-server-2016/">
+  <link rel="canonical" href="https://wujun.org/mange-local-user-and-group-with-powershell/">
 
 
 
 
 
-  <title>Windows Server 2016 Server Core 环境下安装DC | Jun's Blog</title>
+  <title>使用PowerShell管理本地用户和组 | Jun's Blog</title>
   
 
 
@@ -262,7 +253,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wujun.org/install-domain-controller-with-powershell-on-windows-server-2016/">
+    <link itemprop="mainEntityOfPage" href="https://wujun.org/mange-local-user-and-group-with-powershell/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="mkls">
@@ -279,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Windows Server 2016 Server Core 环境下安装DC</h1>
+          <h1 class="post-title" itemprop="name headline">使用PowerShell管理本地用户和组</h1>
         
 
         <div class="post-meta">
@@ -291,8 +282,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-30T14:14:30+08:00">
-                2018-10-30
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-15T15:08:44+08:00">
+                2018-11-15
               </time>
             
 
@@ -329,38 +320,198 @@
       
 
       
-        <p>建议将DC安装在Server Core NO-GUI环境下</p>
-<p>下面介绍一下在Server 2016 Server Core 环境下安装DC的步骤：</p>
-<ol start="0">
-<li><p>安装之前需要确认好计算机名，IP地址 DNS等信息正确。</p>
-<p> 可以使用<code>sconfig</code> 快速配置</p>
-<p><img src="https://ws1.sinaimg.cn/large/627f674cgy1fwqabzw5pfj20i40czdjf.jpg" alt="sconfig"></p>
-</li>
-<li><p>安装Domain Service 服务，使用如下命令：</p>
-<pre><code>Install-WindowsFeature AD-Domain-Services -IncludeManagementTools
-</code></pre><p>安装成功后可以看到提示</p>
-<p><img src="https://ws1.sinaimg.cn/large/627f674cgy1fwq9ct4uwdj20pt0443yi.jpg" alt="install-domain-services"></p>
-</li>
-<li><p>安装配置林中的第一台DC, 同时会提示需要你输入安全模式管理员密码</p>
-<pre><code>Install-ADDSForest -DomainName  mkls.com
-</code></pre><p> <img src="https://ws1.sinaimg.cn/large/627f674cgy1fwqa5rerj1j20q80dpgnm.jpg" alt="addsforst"></p>
-<p> 继续等待</p>
-<p> <img src="https://ws1.sinaimg.cn/large/627f674cgy1fwtrquchzfj20tx0ft764.jpg" alt="reboot"><br>重启后安装完毕。</p>
-<p> 如果是林中已经有域了，安装完ADS后，使用下面这个命令：</p>
-<pre><code>Install-ADDSDomainController  -DomainName &quot;mkls.com&quot; -credential $(get-credential)
-</code></pre><p> 验证通过后也会提示输入安全模式管理员密码,重启</p>
-<p> <img src="https://ws1.sinaimg.cn/large/627f674cgy1fwtrv05xaoj20qo0cptc1.jpg" alt="domain"></p>
-<p> 后面的步骤和前面一样。</p>
-</li>
-<li><p>安装完成后，可以使用<code>DCDIAG</code>验证一下安装结果或查看一下服务情况</p>
-<pre><code>Get-Service adws,kdc,netlogon,dns
-</code></pre><p><img src="https://ws1.sinaimg.cn/large/627f674cgy1fwqamyqunaj20r90fjdio.jpg" alt="dcdiag"></p>
-<p><img src="https://ws1.sinaimg.cn/large/627f674cgy1fwqaaiydurj20hd08jmy0.jpg" alt="check-services"></p>
-<p>查看默认共享</p>
-<pre><code>Get-smbshare
-</code></pre><p><img src="https://ws1.sinaimg.cn/large/627f674cgy1fwqb152fczj20kn06275r.jpg" alt="share"></p>
-</li>
-</ol>
+        <p>记录一下学习<code>powershell</code>管理本地用户和组的一些笔记：</p>
+<p>管理本地账户时会用到的命令：</p>
+<table>
+<thead>
+<tr>
+<th>command</th>
+<th>Discription</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Add-LocalGroupMember</td>
+<td>Adds members to a local group.</td>
+</tr>
+<tr>
+<td>Disabale-LocalUser</td>
+<td>Disable a local user account.</td>
+</tr>
+<tr>
+<td>Enable-Localuser</td>
+<td>Enables a local user account.</td>
+</tr>
+<tr>
+<td>Get-LocalGroup</td>
+<td>Gets the local security groups.</td>
+</tr>
+<tr>
+<td>Get-LocalGroupMember</td>
+<td>Gets members from a local group.</td>
+</tr>
+<tr>
+<td>Get-LocalUser</td>
+<td>Gets local user accounts.</td>
+</tr>
+<tr>
+<td>New-LocalGroup</td>
+<td>Creates a local security group.</td>
+</tr>
+<tr>
+<td>New-LocalUser</td>
+<td>Creats a local user account.</td>
+</tr>
+<tr>
+<td>Remove-LocalGroupMember</td>
+<td>Removes members from a local group.</td>
+</tr>
+<tr>
+<td>Remove-LocalUser</td>
+<td>Delete local user account.</td>
+</tr>
+<tr>
+<td>Rename-LocalGroup</td>
+<td>Renames a local security group.</td>
+</tr>
+<tr>
+<td>Rename-LocalUser</td>
+<td>Rename a local user account.</td>
+</tr>
+<tr>
+<td>Set-LocalGroup</td>
+<td>Changes a local security group.</td>
+</tr>
+<tr>
+<td>Set-localUser</td>
+<td>Modifies a local user account.</td>
+</tr>
+</tbody>
+</table>
+<p> 新增用户<code>new-localuser</code> 命令,可以先看一下帮助信息语法：</p>
+<pre><code>get-help new-localuser
+
+Get-help new-localuser -detailed 
+
+PS C:\Users\awujf&gt; get-help new-localuser -Detailed
+
+NAME
+New-LocalUser
+
+SYNOPSIS
+Creates a local user account.
+
+
+SYNTAX
+New-LocalUser [-Name] &lt;String&gt; [-AccountExpires &lt;DateTime&gt;] [-AccountNeverExpires] [-Confirm] [-Description
+&lt;String&gt;] [-Disabled] [-FullName &lt;String&gt;] -NoPassword [-UserMayNotChangePassword] [-WhatIf] [&lt;CommonParameters&gt;]
+
+New-LocalUser [-Name] &lt;String&gt; [-AccountExpires &lt;DateTime&gt;] [-AccountNeverExpires] [-Confirm] [-Description
+&lt;String&gt;] [-Disabled] [-FullName &lt;String&gt;] -Password &lt;SecureString&gt; [-PasswordNeverExpires]
+[-UserMayNotChangePassword] [-WhatIf] [&lt;CommonParameters&gt;]
+
+
+DESCRIPTION
+The New-LocalUser cmdlet creates a local user account. This cmdlet creates a local user account or a local user
+account that is connected to a Microsoft account.
+
+
+PARAMETERS
+-AccountExpires &lt;DateTime&gt;
+Specifies when the user account expires. To obtain a DateTime object, use the Get-Date cmdlet. If you do not
+specify this parameter, the account does not expire.
+
+-AccountNeverExpires [&lt;SwitchParameter&gt;]
+Indicates that the account does not expire.
+
+-Confirm [&lt;SwitchParameter&gt;]
+Prompts you for confirmation before running the cmdlet.
+
+-Description &lt;String&gt;
+Specifies a comment for the user account. The maximum length is 48 characters.
+
+-Disabled [&lt;SwitchParameter&gt;]
+Indicates that this cmdlet creates the user account as disabled.
+
+-FullName &lt;String&gt;
+Specifies the full name for the user account. The full name differs from the user name of the user account.
+
+-Name &lt;String&gt;
+Specifies the user name for the user account.
+
+If you create a local user account that is connected to a Microsoft account, specify the user name in the
+following format: `MicrosoftAccount\`&lt;user name&gt;@`Outlook.com` for a user of a Microsoft account on
+Outlook.com.
+
+If you create a local user account for the local system, the user name can contain up to 20 uppercase
+characters or lowercase characters. A user name cannot contain the following characters:
+
+&quot; / \ [ ] : ; | = , + * ? &lt; &gt; @
+
+A user name cannot consist only of periods (.) or spaces.
+
+-NoPassword [&lt;SwitchParameter&gt;]
+Indicates that the user account does not have a password.
+
+-Password &lt;SecureString&gt;
+Specifies a password for the user account. You can use `Read-Host -GetCredential`, Get-Credential, or
+ConvertTo-SecureString to create a SecureString object for the password.
+
+If you omit the Password and NoPassword parameters, New-LocalUser prompts you for the new user&apos;s password.
+
+-PasswordNeverExpires [&lt;SwitchParameter&gt;]
+Indicates whether the password expires.
+
+-UserMayNotChangePassword [&lt;SwitchParameter&gt;]
+Indicates that the user cannot change the password on the user account.
+
+-WhatIf [&lt;SwitchParameter&gt;]
+Shows what would happen if the cmdlet runs. The cmdlet is not run.
+
+&lt;CommonParameters&gt;
+This cmdlet supports the common parameters: Verbose, Debug,
+ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+OutBuffer, PipelineVariable, and OutVariable. For more information, see
+about_CommonParameters (https:/go.microsoft.com/fwlink/?LinkID=113216).
+
+Example 1: Create a user account
+
+PS C:\&gt;New-LocalUser -Name &quot;User02&quot; -Description &quot;Description of this account.&quot; -NoPassword
+Name    Enabled  Description
+----    -------  -----------
+User02  True     Description of this account.
+
+This command creates a local user account. The command does not specify the AccountExpires parameter. Therefore,
+the account does not expire.
+Example 2: Create a user account that has a password
+
+PS C:\&gt;$Password = Read-Host -AsSecureString
+PS C:\&gt; New-LocalUser &quot;User03&quot; -Password $Password -FullName &quot;Third User&quot; -Description &quot;Description of this
+account.&quot;
+Name    Enabled  Description
+----    -------  -----------
+User03  True     Description of this account.
+
+The first command prompts you for a password by using the Read-Host cmdlet. The command stores the password as a
+secure string in the $Password variable.
+
+The second command creates a local user account by using the password stored in $Password. The command specifies a
+user name, full name, and description for the user account.
+Example 3: Create a user account that is connected to a Microsoft account
+
+PS C:\&gt;New-LocalUser -Name &quot;MicrosoftAccount\usr name@Outlook.com&quot; -Description &quot;Description of this account.&quot;
+
+This command creates a local user account that is connected to a Microsoft account. This example uses a
+placeholder value for the user name of an account at Outlook.com. Because the account is connected to a Microsoft
+account, do not specify a password.
+REMARKS
+To see the examples, type: &quot;get-help New-LocalUser -examples&quot;.
+For more information, type: &quot;get-help New-LocalUser -detailed&quot;.
+For technical information, type: &quot;get-help New-LocalUser -full&quot;.
+For online help, type: &quot;get-help New-LocalUser -online&quot;
+</code></pre><p>其他的命令都可以使用<code>help</code>来获取详细的语法，就不写了。</p>
+<p>Reference:</p>
+<p><a href="https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.localaccounts/?view=powershell-5.1&amp;viewFallbackFrom=powershell-6#microsoft.powershell.localaccounts" target="_blank" rel="noopener">Microsoft.PowerShell.LocalAccounts</a></p>
 
       
     </div>
@@ -378,11 +529,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/windows/" rel="tag"># windows</a>
-          
             <a href="/tags/powershell/" rel="tag"># powershell</a>
           
-            <a href="/tags/server/" rel="tag"># server</a>
+            <a href="/tags/user/" rel="tag"># user</a>
+          
+            <a href="/tags/group/" rel="tag"># group</a>
           
         </div>
       
@@ -395,8 +546,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/fix-an-error-occurred-while-attempting-to-connect-to-Hyper-V-server/" rel="next" title="Hyper-V An Error Occurred">
-                <i class="fa fa-chevron-left"></i> Hyper-V An Error Occurred
+              <a href="/net-user/" rel="next" title="net user 用法">
+                <i class="fa fa-chevron-left"></i> net user 用法
               </a>
             
           </div>
@@ -404,10 +555,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/manage-ou-with-powershell/" rel="prev" title="Manage OU with PowerShell">
-                Manage OU with PowerShell <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
