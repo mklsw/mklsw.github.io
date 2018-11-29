@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="windows,powershell,robocopy,">
 
 
 
@@ -79,16 +79,21 @@
 
 
 
-<meta name="description" content="Stay Hungry Stay Foolish">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Jun&#39;s Blog">
-<meta property="og:url" content="https://wujun.org/tags/ssh/index.html">
+<meta name="description" content="今天在抓取装机失败sms.log文件时用到，查了文档自己记录一下: 在命令行下复制文件或文件夹 使用的命令有copy和robocopy.  复制文件的copy命令，help copy 可以看到具体的语法示例： PS C:\WINDOWS\system32&amp;gt; copy C:\user.txt C:\Users\awujf\Dropbox   复制文件夹使用 robocopy命令, roboco">
+<meta name="keywords" content="windows,powershell,robocopy">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在windows命令行中复制文件">
+<meta property="og:url" content="https://wujun.org/copy-files-with-command-line-on-windows/index.html">
 <meta property="og:site_name" content="Jun&#39;s Blog">
-<meta property="og:description" content="Stay Hungry Stay Foolish">
+<meta property="og:description" content="今天在抓取装机失败sms.log文件时用到，查了文档自己记录一下: 在命令行下复制文件或文件夹 使用的命令有copy和robocopy.  复制文件的copy命令，help copy 可以看到具体的语法示例： PS C:\WINDOWS\system32&amp;gt; copy C:\user.txt C:\Users\awujf\Dropbox   复制文件夹使用 robocopy命令, roboco">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/627f674cgy1fxp1pqyc9cj20d300o0sh.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/627f674cgy1fxp1th2fajj20gy0dbglm.jpg">
+<meta property="og:updated_time" content="2018-11-29T09:38:01.279Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Jun&#39;s Blog">
-<meta name="twitter:description" content="Stay Hungry Stay Foolish">
+<meta name="twitter:title" content="在windows命令行中复制文件">
+<meta name="twitter:description" content="今天在抓取装机失败sms.log文件时用到，查了文档自己记录一下: 在命令行下复制文件或文件夹 使用的命令有copy和robocopy.  复制文件的copy命令，help copy 可以看到具体的语法示例： PS C:\WINDOWS\system32&amp;gt; copy C:\user.txt C:\Users\awujf\Dropbox   复制文件夹使用 robocopy命令, roboco">
+<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/627f674cgy1fxp1pqyc9cj20d300o0sh.jpg">
 
 
 
@@ -118,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="https://wujun.org/tags/ssh/">
+  <link rel="canonical" href="https://wujun.org/copy-files-with-command-line-on-windows/">
 
 
 
 
 
-  <title>Tag: ssh | Jun's Blog</title>
+  <title>在windows命令行中复制文件 | Jun's Blog</title>
   
 
 
@@ -143,7 +148,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -237,78 +242,175 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>ssh<small>Tag</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://wujun.org/copy-files-with-command-line-on-windows/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="mkls">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://ws1.sinaimg.cn/large/627f674cly1fwqciaaeraj20qo0qotaf.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jun's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/install-openssh-on-windows-server/" itemprop="url">
-              
-                <span itemprop="name">使用openssh-portable 在windows server上安装SSH</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">在windows命令行中复制文件</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-11-08T09:56:22+08:00" content="2018-11-08">
-          11-08
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-29T17:02:31+08:00">
+                2018-11-29
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
+      
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/install-SFTP-with-cygwin-on-windows-server/" itemprop="url">
-              
-                <span itemprop="name">使用cygwin在windows server上安装SFTP</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-11-07T09:50:32+08:00" content="2018-11-07">
-          11-07
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+      
+        <p>今天在抓取装机失败<code>sms.log</code>文件时用到，查了文档自己记录一下:</p>
+<p>在命令行下复制文件或文件夹 使用的命令有<code>copy</code>和<code>robocopy</code>.</p>
+<ol>
+<li><p>复制文件的<code>copy</code>命令，<code>help copy</code> 可以看到具体的语法<br>示例：</p>
+<pre><code>PS C:\WINDOWS\system32&gt; copy C:\user.txt C:\Users\awujf\Dropbox
+</code></pre><p><img src="https://ws1.sinaimg.cn/large/627f674cgy1fxp1pqyc9cj20d300o0sh.jpg" alt="copy-use"></p>
+</li>
+<li><p>复制文件夹使用 <code>robocopy</code>命令, <code>robocopy help</code> 查看详细语法<br> 示例：</p>
+<pre><code>robocopy C:\test  C:\Users\awujf\Dropbox /e
+</code></pre><p> <img src="https://ws1.sinaimg.cn/large/627f674cgy1fxp1th2fajj20gy0dbglm.jpg" alt="robocopy-use"><br> <code>robocopy</code>有很多其他参数，使用<code>robocopy /?</code>来查看具体用法：</p>
+<ul>
+<li><p><em>.</em> 源文件或文件中，有文件名中带空格时需要用到</p>
+</li>
+<li><p>/r  复制所有文件，包括隐藏的文件</p>
+</li>
+<li><p>/mir 复制的文件，带有完整的权限，备份时会用到</p>
+<p>详细语法:</p>
+<p>  PS C:\WINDOWS\system32&gt; robocopy /?</p>
+</li>
+</ul>
+</li>
+</ol>
+<p>Reference:</p>
+<p><a href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/robocopy" target="_blank" rel="noopener">https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/robocopy</a></p>
+<p><a href="https://zh.wikihow.com/%E5%9C%A8%E5%91%BD%E4%BB%A4%E6%8F%90%E7%A4%BA%E7%AC%A6%E4%B8%AD%E5%A4%8D%E5%88%B6%E6%96%87%E4%BB%B6" target="_blank" rel="noopener">https://zh.wikihow.com/%E5%9C%A8%E5%91%BD%E4%BB%A4%E6%8F%90%E7%A4%BA%E7%AC%A6%E4%B8%AD%E5%A4%8D%E5%88%B6%E6%96%87%E4%BB%B6</a></p>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/windows/" rel="tag"># windows</a>
+          
+            <a href="/tags/powershell/" rel="tag"># powershell</a>
+          
+            <a href="/tags/robocopy/" rel="tag"># robocopy</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/how-to-setup-ftp-on-ubuntu-1804-with-vsftpd/" rel="next" title="ubuntu 1804 上配置FTP">
+                <i class="fa fa-chevron-left"></i> ubuntu 1804 上配置FTP
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -316,6 +418,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -561,6 +667,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
