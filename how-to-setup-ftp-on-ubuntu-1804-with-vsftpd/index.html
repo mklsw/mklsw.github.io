@@ -79,20 +79,20 @@
 
 
 
-<meta name="description" content="趁着黑五在搬瓦工撸了一台VPS，想把自己的一些常用工具放上去，并使用来FTP访问。下面记录一下安装FTP服务的过程。安装之前我先在自己的虚拟机测试了一遍，没问题后开始安装，过程不是很复杂。 Server: Ubuntu 1804Tools： Putty,  Winscp  安装vsftpd服务 sudo apt install vsftpd    配置vsftpd服务 先把vsftp服务默认配置文">
+<meta name="description" content="趁着黑五在搬瓦工买了一台VPS，想把自己的一些常用工具放上去，并使用FTP匿名访问。下面记录一下安装FTP服务的过程。安装之前我先在自己的虚拟机测试了一遍，没问题后开始安装，过程不是很复杂。 Server: Ubuntu 1804Tools： Putty,  Winscp  安装vsftpd服务 sudo apt install vsftpd    配置vsftpd服务 打开配置文件 sudo n">
 <meta name="keywords" content="ftp,vsftpd,ubuntu">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ubuntu 1804 上配置FTP">
 <meta property="og:url" content="https://wujun.org/how-to-setup-ftp-on-ubuntu-1804-with-vsftpd/index.html">
 <meta property="og:site_name" content="Jun&#39;s Blog">
-<meta property="og:description" content="趁着黑五在搬瓦工撸了一台VPS，想把自己的一些常用工具放上去，并使用来FTP访问。下面记录一下安装FTP服务的过程。安装之前我先在自己的虚拟机测试了一遍，没问题后开始安装，过程不是很复杂。 Server: Ubuntu 1804Tools： Putty,  Winscp  安装vsftpd服务 sudo apt install vsftpd    配置vsftpd服务 先把vsftp服务默认配置文">
+<meta property="og:description" content="趁着黑五在搬瓦工买了一台VPS，想把自己的一些常用工具放上去，并使用FTP匿名访问。下面记录一下安装FTP服务的过程。安装之前我先在自己的虚拟机测试了一遍，没问题后开始安装，过程不是很复杂。 Server: Ubuntu 1804Tools： Putty,  Winscp  安装vsftpd服务 sudo apt install vsftpd    配置vsftpd服务 打开配置文件 sudo n">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/627f674cgy1fxierx5u5ij20hv0aqdgk.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/627f674cly1fxifym7mlij20hu0aqwey.jpg">
-<meta property="og:updated_time" content="2018-11-23T16:15:49.017Z">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/627f674cgy1fxten0oygej20cf02st8o.jpg">
+<meta property="og:updated_time" content="2018-12-03T05:03:42.628Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ubuntu 1804 上配置FTP">
-<meta name="twitter:description" content="趁着黑五在搬瓦工撸了一台VPS，想把自己的一些常用工具放上去，并使用来FTP访问。下面记录一下安装FTP服务的过程。安装之前我先在自己的虚拟机测试了一遍，没问题后开始安装，过程不是很复杂。 Server: Ubuntu 1804Tools： Putty,  Winscp  安装vsftpd服务 sudo apt install vsftpd    配置vsftpd服务 先把vsftp服务默认配置文">
+<meta name="twitter:description" content="趁着黑五在搬瓦工买了一台VPS，想把自己的一些常用工具放上去，并使用FTP匿名访问。下面记录一下安装FTP服务的过程。安装之前我先在自己的虚拟机测试了一遍，没问题后开始安装，过程不是很复杂。 Server: Ubuntu 1804Tools： Putty,  Winscp  安装vsftpd服务 sudo apt install vsftpd    配置vsftpd服务 打开配置文件 sudo n">
 <meta name="twitter:image" content="https://ws1.sinaimg.cn/large/627f674cgy1fxierx5u5ij20hv0aqdgk.jpg">
 
 
@@ -323,39 +323,32 @@
       
 
       
-        <p>趁着黑五在搬瓦工撸了一台VPS，想把自己的一些常用工具放上去，并使用来FTP访问。下面记录一下安装FTP服务的过程。<br>安装之前我先在自己的虚拟机测试了一遍，没问题后开始安装，过程不是很复杂。</p>
+        <p>趁着黑五在搬瓦工买了一台VPS，想把自己的一些常用工具放上去，并使用FTP匿名访问。下面记录一下安装FTP服务的过程。<br>安装之前我先在自己的虚拟机测试了一遍，没问题后开始安装，过程不是很复杂。</p>
 <p>Server: Ubuntu 1804<br>Tools： Putty,  Winscp</p>
 <ol>
 <li><p>安装<code>vsftpd</code>服务</p>
 <pre><code>sudo apt install vsftpd
 </code></pre><p> <img src="https://ws1.sinaimg.cn/large/627f674cgy1fxierx5u5ij20hv0aqdgk.jpg" alt="install-vsftpd"></p>
 </li>
-<li><p>配置<code>vsftpd</code>服务<br> 先把vsftp服务默认配置文件备份一下</p>
-<pre><code>sudo mv /etc/vsftpd.conf /etc/vsftpd.conf_orig
-</code></pre><p> 再创建一个新的配置文件</p>
+<li><p>配置<code>vsftpd</code>服务<br> 打开配置文件</p>
 <pre><code>sudo nano  /etc/vsftpd.conf
-</code></pre><p> 再插入以下配置信息：</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">listen=NO</span><br><span class="line">listen_ipv6=YES</span><br><span class="line">anonymous_enable=NO</span><br><span class="line">local_enable=YES</span><br><span class="line">write_enable=YES</span><br><span class="line">local_umask=022</span><br><span class="line">dirmessage_enable=YES</span><br><span class="line">use_localtime=YES</span><br><span class="line">xferlog_enable=YES</span><br><span class="line">connect_from_port_20=YES</span><br><span class="line">chroot_local_user=YES</span><br><span class="line">secure_chroot_dir=/var/run/vsftpd/empty</span><br><span class="line">pam_service_name=vsftpd</span><br><span class="line">rsa_cert_file=/etc/ssl/certs/ssl-cert-snakeoil.pem</span><br><span class="line">rsa_private_key_file=/etc/ssl/private/ssl-cert-snakeoil.key</span><br><span class="line">ssl_enable=NO</span><br><span class="line">pasv_enable=Yes</span><br><span class="line">pasv_min_port=10000</span><br><span class="line">pasv_max_port=10100</span><br><span class="line">allow_writeable_chroot=YES</span><br></pre></td></tr></table></figure>
-<p> <img src="https://ws1.sinaimg.cn/large/627f674cly1fxifym7mlij20hu0aqwey.jpg" alt="config"><br> 接下来就是防火墙配置，没有防火墙的可以不设置</p>
-<pre><code>sudo ufw allow from any to any port 20,21,10000:10100 proto tcp
-</code></pre><p> 启动vsftp服务</p>
-<pre><code>sudo service vsftp restart
-</code></pre></li>
-<li><p>创建FTP的用户名和密码</p>
-<pre><code>sudo useradd -m  mkls
-sudo passwd mkls
+</code></pre><p> 启用匿名访问</p>
+<pre><code>anonymous_enable=Yes
+</code></pre><p> 建立一个测试文件</p>
+<pre><code>echo &quot;vsftp test file &quot; |sudo tee /srv/ftp/test.txt
+</code></pre><p> 重启vsftp服务</p>
+<pre><code>sudo systemctl restart vsftpd.service
 </code></pre></li>
 <li><p>测试</p>
-<p>winscp 或直接直接本地测试</p>
-<pre><code>ftp  ftpserveraddress
-</code></pre></li>
+<p> 随便找个浏览器ftp访问测试</p>
+<p> <img src="https://ws1.sinaimg.cn/large/627f674cgy1fxten0oygej20cf02st8o.jpg" alt="vsftp-test"></p>
+</li>
 </ol>
+<p>启用用户名访问，设置用户目录权限等，下次待更新…</p>
 <p>需要注意的地方：</p>
 <p>配置文件不能写错了，修改配置后需要重新启动服务才会生效。</p>
 <p>Reference:</p>
-<p><a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-vsftpd-for-anonymous-downloads-on-ubuntu-16-04" target="_blank" rel="noopener">https://www.digitalocean.com/community/tutorials/how-to-set-up-vsftpd-for-anonymous-downloads-on-ubuntu-16-04</a></p>
 <p><a href="https://help.ubuntu.com/lts/serverguide/ftp-server.html.en#vsftpd-anonymous-configuration" target="_blank" rel="noopener">https://help.ubuntu.com/lts/serverguide/ftp-server.html.en#vsftpd-anonymous-configuration</a></p>
-<p><a href="https://linuxconfig.org/how-to-setup-ftp-server-on-ubuntu-18-04-bionic-beaver-with-vsftpd" target="_blank" rel="noopener">https://linuxconfig.org/how-to-setup-ftp-server-on-ubuntu-18-04-bionic-beaver-with-vsftpd</a></p>
 
       
     </div>
