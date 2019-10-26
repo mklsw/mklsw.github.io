@@ -53,7 +53,7 @@
   <meta name="description" content="Stay Hungry Stay Foolish">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Jun&#39;s Blog">
-<meta property="og:url" content="https://wujun.org/page/2/index.html">
+<meta property="og:url" content="https://wujun.org/page/3/index.html">
 <meta property="og:site_name" content="Jun&#39;s Blog">
 <meta property="og:description" content="Stay Hungry Stay Foolish">
 <meta property="og:locale" content="default">
@@ -61,7 +61,7 @@
 <meta name="twitter:title" content="Jun&#39;s Blog">
 <meta name="twitter:description" content="Stay Hungry Stay Foolish">
 
-<link rel="canonical" href="https://wujun.org/page/2/">
+<link rel="canonical" href="https://wujun.org/page/3/">
 
 
 <script id="page-configurations">
@@ -186,7 +186,7 @@
   
   
   <article itemscope="" itemtype="http://schema.org/Article" class="post-block home" lang="default">
-    <link itemprop="mainEntityOfPage" href="https://wujun.org/install-openssh-on-windows-server/">
+    <link itemprop="mainEntityOfPage" href="https://wujun.org/install-hyper-v-on-windows-10/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -200,7 +200,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/install-openssh-on-windows-server/" class="post-title-link" itemprop="url">使用openssh-portable 在windows server上安装SSH</a>
+            <a href="/install-hyper-v-on-windows-10/" class="post-title-link" itemprop="url">Windows 10中安装Hyper-V</a>
         </h1>
 
         <div class="post-meta">
@@ -210,14 +210,14 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2018-11-08 09:56:22" itemprop="dateCreated datePublished" datetime="2018-11-08T09:56:22+08:00">2018-11-08</time>
+              <time title="Created: 2018-10-28 12:54:59" itemprop="dateCreated datePublished" datetime="2018-10-28T12:54:59+08:00">2018-10-28</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-10-26 22:50:06" itemprop="dateModified" datetime="2019-10-26T22:50:06+08:00">2019-10-26</time>
+                <time title="Modified: 2019-10-26 23:06:06" itemprop="dateModified" datetime="2019-10-26T23:06:06+08:00">2019-10-26</time>
               </span>
 
           
@@ -231,12 +231,14 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>接前面<a href="https://wujun.org/install-SFTP-with-cygwin-on-windows-server/">一篇文章</a> 介绍了使用<code>cygwin</code>来配置SFTP，今天讲一下使用<code>openssh-portable</code>的配置。</p>
-<p><code>openssh-portable</code>是微软自己折腾出来的一个东西，相对来说比<code>cygwin</code>更加容易配置。另外从Win 1803 开始<code>openssh</code> 已经成为了windows的一个内置程序，和<a href="https://wujun.org/install-RSAT-in-windows10-after-1809/">RSAT</a>一样按需安装。<br>下面分享一下安装过程：</p>
-<p>环境是Windows Server 2008 R2 64 位<br>
+          <p>在windows 10中安装Hyper-V 有三种方式，通过控制面板里的添加删除功能，PowerShell或者Deployment Imageing Servicing and Management tool(DISM).下面介绍安装步骤:<br>        Hyper-V现在已经集成到Windows 10中，不需要下载安装。</p>
+<blockquote>
+<p>检查安装需求:<br>windows 版本:专业版，企业版或者教育版<br>64位处理器，支持SLAT<br>CPU支持虚拟化<br>最小4G内存</p>
+</blockquote>
+<p>可以在PowerShell或者CMD通过 systeminfo命令来检查硬件兼容性<br><code>systeminfo</code><br>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/install-openssh-on-windows-server/#more" rel="contents">
+              <a class="btn" href="/install-hyper-v-on-windows-10/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -260,7 +262,7 @@
   
   
   <article itemscope="" itemtype="http://schema.org/Article" class="post-block home" lang="default">
-    <link itemprop="mainEntityOfPage" href="https://wujun.org/install-SFTP-with-cygwin-on-windows-server/">
+    <link itemprop="mainEntityOfPage" href="https://wujun.org/build-blog-with-github-pages-and-hexo/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -274,7 +276,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/install-SFTP-with-cygwin-on-windows-server/" class="post-title-link" itemprop="url">使用cygwin在windows server上安装SFTP</a>
+            <a href="/build-blog-with-github-pages-and-hexo/" class="post-title-link" itemprop="url">使用Github Pages 和 hexo搭建博客</a>
         </h1>
 
         <div class="post-meta">
@@ -284,14 +286,14 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2018-11-07 09:50:32" itemprop="dateCreated datePublished" datetime="2018-11-07T09:50:32+08:00">2018-11-07</time>
+              <time title="Created: 2018-10-27 22:05:18" itemprop="dateCreated datePublished" datetime="2018-10-27T22:05:18+08:00">2018-10-27</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-10-26 22:51:50" itemprop="dateModified" datetime="2019-10-26T22:51:50+08:00">2019-10-26</time>
+                <time title="Modified: 2018-11-08 10:40:25" itemprop="dateModified" datetime="2018-11-08T10:40:25+08:00">2018-11-08</time>
               </span>
 
           
@@ -305,95 +307,12 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>因为安全的原因，公司内部的FTP需要升级成SFTP(SSH File Transfer Protocol),找了些资料有很多方案:</p>
-<ul>
-<li><p>使用第三方付费软件，简单好用，但需要买很多license，不划算。</p>
-</li>
-<li><p>免费的软件，<a href="https://www.solarwinds.等com/free-tools/free-sftp-server" target="_blank" rel="noopener">Solarwinds</a>等,大都有用户量的限制，不能满足需求。</p>
-</li>
-<li><p>使用开源免费软件，有<a href="https://github.com/PowerShell/openssh-portable" target="_blank" rel="noopener">openssh-portable</a>和<a href="https://www.cygwin.com/" target="_blank" rel="noopener">Cygwin</a> 两种方案。</p>
+          <p>接前一篇博文，git已经安装配置完毕，接下来准备安装Hexo和更新到Github Pages.</p><ul>
+<li>Hexo 安装配置 <a href="https://hexo.io/zh-cn/docs/index.html" target="_blank" rel="noopener">https://hexo.io/zh-cn/docs/index.html</a></li>
+</ul><p>hexo new  写一篇博文<br>Hexo g    生成静态文件<br>hexo s    本地预览<br>hexo d    分布出去</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/install-SFTP-with-cygwin-on-windows-server/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </li></ul></div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope="" itemtype="http://schema.org/Article" class="post-block home" lang="default">
-    <link itemprop="mainEntityOfPage" href="https://wujun.org/manage-ou-with-powershell/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="mkls">
-      <meta itemprop="description" content="Stay Hungry Stay Foolish">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jun's Blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/manage-ou-with-powershell/" class="post-title-link" itemprop="url">Manage OU with PowerShell</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2018-10-30 21:38:43" itemprop="dateCreated datePublished" datetime="2018-10-30T21:38:43+08:00">2018-10-30</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-10-26 22:40:33" itemprop="dateModified" datetime="2019-10-26T22:40:33+08:00">2019-10-26</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>OU的管理主要有新增，修改和删除，下面分别简单介绍下：</p>
-<ol>
-<li><p>直接创建一个Shanghai的OU，无任何其他参数：</p>
-<pre><code>New-ADOrganizationalUnit 
-
-New-ADOrganizationalUnit -Name &quot;Shanghai&quot; -Path &quot;DC=contoso,DC=com&quot;
-</code></pre></li>
-</ol>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/manage-ou-with-powershell/#more" rel="contents">
+              <a class="btn" href="/build-blog-with-github-pages-and-hexo/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -417,7 +336,7 @@ New-ADOrganizationalUnit -Name &quot;Shanghai&quot; -Path &quot;DC=contoso,DC=co
   
   
   <article itemscope="" itemtype="http://schema.org/Article" class="post-block home" lang="default">
-    <link itemprop="mainEntityOfPage" href="https://wujun.org/install-domain-controller-with-powershell-on-windows-server-2016/">
+    <link itemprop="mainEntityOfPage" href="https://wujun.org/git/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -431,7 +350,7 @@ New-ADOrganizationalUnit -Name &quot;Shanghai&quot; -Path &quot;DC=contoso,DC=co
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/install-domain-controller-with-powershell-on-windows-server-2016/" class="post-title-link" itemprop="url">Windows Server 2016 Server Core 环境下安装DC</a>
+            <a href="/git/" class="post-title-link" itemprop="url">Git 新手配置</a>
         </h1>
 
         <div class="post-meta">
@@ -441,14 +360,14 @@ New-ADOrganizationalUnit -Name &quot;Shanghai&quot; -Path &quot;DC=contoso,DC=co
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2018-10-30 14:14:30" itemprop="dateCreated datePublished" datetime="2018-10-30T14:14:30+08:00">2018-10-30</time>
+              <time title="Created: 2018-10-27 12:05:18" itemprop="dateCreated datePublished" datetime="2018-10-27T12:05:18+08:00">2018-10-27</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-10-26 22:42:16" itemprop="dateModified" datetime="2019-10-26T22:42:16+08:00">2019-10-26</time>
+                <time title="Modified: 2018-10-30 16:09:02" itemprop="dateModified" datetime="2018-10-30T16:09:02+08:00">2018-10-30</time>
               </span>
 
           
@@ -462,21 +381,33 @@ New-ADOrganizationalUnit -Name &quot;Shanghai&quot; -Path &quot;DC=contoso,DC=co
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>建议将DC安装在Server Core NO-GUI环境下</p>
-<p>下面介绍一下在Server 2016 Server Core 环境下安装DC的步骤：</p>
-<ol start="0">
-<li><p>安装之前需要确认好计算机名，IP地址 DNS等信息正确。</p>
-<p> 可以使用<code>sconfig</code> 快速配置</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/install-domain-controller-with-powershell-on-windows-server-2016/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
+          <p>Git 也是我在学习Python的时候才开始了解的，我理解它就是一款用来控制代码版本的一个工具。下面是初学者的入门配置。</p>
+<ol>
+<li><p>下载安装</p>
+<p>下载 ：<a href="https://github.com/waylau/git-for-win" target="_blank" rel="noopener">Git for windows 国内下载站</a> </p>
+<p>安装过程省略。</p>
+</li>
+<li><p>配置Git<br>在任意地方右键点Git bash here </p>
+<pre><code>$ git config --global user.name &quot;你的名字&quot;
+
+$ git config --global user.email 你的邮件地址
+</code></pre></li>
+</ol>
+<ol start="3">
+<li><p>生成SSH key</p>
+<pre><code>$ssh -keygen
+</code></pre></li>
+</ol>
+<ol start="4">
+<li>将生成的SSH Pub Key 添加到Github 或其他地方。<br>public key 在windows 10 系统中默认的路径是C:\Users\你的用户名.ssh</li>
+</ol>
+<p>Reference:</p>
+<p>Git 入门指引: <a href="http://blog.a0z.me/2014/05/21/GitBeginning/" target="_blank" rel="noopener">http://blog.a0z.me/2014/05/21/GitBeginning/</a></p>
+<p>Git 简明指南：<a href="http://rogerdudler.github.io/git-guide/index.zh.html" target="_blank" rel="noopener">http://rogerdudler.github.io/git-guide/index.zh.html</a></p>
+<p>Git Documentation：<a href="https://git-scm.com/doc" target="_blank" rel="noopener">https://git-scm.com/doc</a></p>
+
       
-    </li></ol></div>
+    </div>
 
     
     
@@ -493,7 +424,7 @@ New-ADOrganizationalUnit -Name &quot;Shanghai&quot; -Path &quot;DC=contoso,DC=co
   
   
   <article itemscope="" itemtype="http://schema.org/Article" class="post-block home" lang="default">
-    <link itemprop="mainEntityOfPage" href="https://wujun.org/fix-an-error-occurred-while-attempting-to-connect-to-Hyper-V-server/">
+    <link itemprop="mainEntityOfPage" href="https://wujun.org/start/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -507,7 +438,7 @@ New-ADOrganizationalUnit -Name &quot;Shanghai&quot; -Path &quot;DC=contoso,DC=co
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/fix-an-error-occurred-while-attempting-to-connect-to-Hyper-V-server/" class="post-title-link" itemprop="url">Hyper-V An Error Occurred</a>
+            <a href="/start/" class="post-title-link" itemprop="url">Start</a>
         </h1>
 
         <div class="post-meta">
@@ -517,14 +448,14 @@ New-ADOrganizationalUnit -Name &quot;Shanghai&quot; -Path &quot;DC=contoso,DC=co
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2018-10-29 16:37:12" itemprop="dateCreated datePublished" datetime="2018-10-29T16:37:12+08:00">2018-10-29</time>
+              <time title="Created: 2018-10-26 16:05:18" itemprop="dateCreated datePublished" datetime="2018-10-26T16:05:18+08:00">2018-10-26</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-10-26 22:43:30" itemprop="dateModified" datetime="2019-10-26T22:43:30+08:00">2019-10-26</time>
+                <time title="Modified: 2018-11-30 08:51:13" itemprop="dateModified" datetime="2018-11-30T08:51:13+08:00">2018-11-30</time>
               </span>
 
           
@@ -538,18 +469,9 @@ New-ADOrganizationalUnit -Name &quot;Shanghai&quot; -Path &quot;DC=contoso,DC=co
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>连接虚拟机时报错了：</p>
-<blockquote>
-<p>An error occurred while attempting to connect to server “computer name”.Check that the Virtual Machine Management service is running and that you are authorized to connect to the server.<br>Hyper-V encountered an error trying to access an object on computer “computer name” because the object was not found.The object might have been deleted.Verify that the Virtual Machina Management service on the computer is running.</p>
-</blockquote>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/fix-an-error-occurred-while-attempting-to-connect-to-Hyper-V-server/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
+          <p>欢迎来到我的博客，这是我的第一篇博文，这里主要记录自己在学习和工作中遇到的一些问题，以前的旧博文也不打算迁移，以后会慢慢更新。</p>
+<p>Power By <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a>, theme <a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">Next</a> and host by <a href="https://pages.github.com/" target="_blank" rel="noopener">Github Pages</a>.</p>
+
       
     </div>
 
@@ -568,7 +490,7 @@ New-ADOrganizationalUnit -Name &quot;Shanghai&quot; -Path &quot;DC=contoso,DC=co
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
   </nav>
 
 
