@@ -50,18 +50,18 @@
   };
 </script>
 
-  <meta name="description" content="最近要准备迁移文件服务器,把它从工作组用本地用户和组来共享的方式升级到域环境.花了3个多小时研究,记录一下.大概步骤:1 首先准备好用户信息,并生成csv文件.2 准备powershell脚本.3 运行脚本.几个需要注意的地方:1 注意powershell 版本号, 避免不能使用activedirectory moudle.2 脚本先放在powershell ise里跑一下测试看看,有没有错误,注">
+  <meta name="description" content="最近要准备迁移文件服务器,把它从工作组用本地用户和组来共享的方式升级到域环境.花了3个多小时研究,记录一下. 大概步骤:1 首先准备好用户信息,并生成csv文件.2 准备powershell脚本.3 运行脚本.">
 <meta name="keywords" content="powershell">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用powershell批量创建域账号">
 <meta property="og:url" content="https://wujun.org/create-multiple -ad-accounts-with-powershell/index.html">
 <meta property="og:site_name" content="Jun&#39;s Blog">
-<meta property="og:description" content="最近要准备迁移文件服务器,把它从工作组用本地用户和组来共享的方式升级到域环境.花了3个多小时研究,记录一下.大概步骤:1 首先准备好用户信息,并生成csv文件.2 准备powershell脚本.3 运行脚本.几个需要注意的地方:1 注意powershell 版本号, 避免不能使用activedirectory moudle.2 脚本先放在powershell ise里跑一下测试看看,有没有错误,注">
+<meta property="og:description" content="最近要准备迁移文件服务器,把它从工作组用本地用户和组来共享的方式升级到域环境.花了3个多小时研究,记录一下. 大概步骤:1 首先准备好用户信息,并生成csv文件.2 准备powershell脚本.3 运行脚本.">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-11-16T15:40:26.170Z">
+<meta property="og:updated_time" content="2019-11-16T15:41:57.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用powershell批量创建域账号">
-<meta name="twitter:description" content="最近要准备迁移文件服务器,把它从工作组用本地用户和组来共享的方式升级到域环境.花了3个多小时研究,记录一下.大概步骤:1 首先准备好用户信息,并生成csv文件.2 准备powershell脚本.3 运行脚本.几个需要注意的地方:1 注意powershell 版本号, 避免不能使用activedirectory moudle.2 脚本先放在powershell ise里跑一下测试看看,有没有错误,注">
+<meta name="twitter:description" content="最近要准备迁移文件服务器,把它从工作组用本地用户和组来共享的方式升级到域环境.花了3个多小时研究,记录一下. 大概步骤:1 首先准备好用户信息,并生成csv文件.2 准备powershell脚本.3 运行脚本.">
 
 <link rel="canonical" href="https://wujun.org/create-multiple -ad-accounts-with-powershell/">
 
@@ -225,9 +225,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>最近要准备迁移文件服务器,把它从工作组用本地用户和组来共享的方式升级到域环境.花了3个多小时研究,记录一下.</p><p>大概步骤:<br>1 首先准备好用户信息,并生成csv文件.<br>2 准备powershell脚本.<br>3 运行脚本.</p><p>几个需要注意的地方:<br>1 注意powershell 版本号, 避免不能使用activedirectory moudle.<br>2 脚本先放在powershell ise里跑一下测试看看,有没有错误,注意语法和大小写.<br>3 注意csv文件的路径.<br>4 检查是否有同名的人.</p><a id="more"></a>
-
-
+        <p>最近要准备迁移文件服务器,把它从工作组用本地用户和组来共享的方式升级到域环境.花了3个多小时研究,记录一下.</p>
+<p>大概步骤:<br>1 首先准备好用户信息,并生成csv文件.<br>2 准备powershell脚本.<br>3 运行脚本.</p>
+<a id="more"></a>
+<p>几个需要注意的地方:<br>1 注意powershell 版本号, 避免不能使用activedirectory moudle.<br>2 脚本先放在powershell ise里跑一下测试看看,有没有错误,注意语法和大小写.<br>3 注意csv文件的路径.<br>4 检查是否有同名的人.</p>
 <p>附上脚本:</p>
 <pre><code>Import-Module ActiveDirectory
 </code></pre><p>#Enter a path to your import CSV file<br>$ADUsers = Import-csv C:\newusers.csv</p>
