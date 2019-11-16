@@ -50,20 +50,20 @@
   };
 </script>
 
-  <meta name="description" content="今天在抓取装机失败sms.log文件时用到，查了文档自己记录一下: 在命令行下复制文件或文件夹 使用的命令有copy和robocopy.  复制文件的copy命令，help copy 可以看到具体的语法示例： PS C:\WINDOWS\system32&amp;gt; copy C:\user.txt C:\Users\awujf\Dropbox">
-<meta name="keywords" content="powershell,windows,robocopy">
+  <meta name="description" content="最近要准备迁移文件服务器,把它从工作组用本地用户和组来共享的方式升级到域环境.花了3个多小时研究,记录一下.大概步骤:1 首先准备好用户信息,并生成csv文件.2 准备powershell脚本.3 运行脚本.几个需要注意的地方:1 注意powershell 版本号, 避免不能使用activedirectory moudle.2 脚本先放在powershell ise里跑一下测试看看,有没有错误,注">
+<meta name="keywords" content="powershell">
 <meta property="og:type" content="article">
-<meta property="og:title" content="在windows命令行中复制文件">
-<meta property="og:url" content="https://wujun.org/copy-files-with-command-line-on-windows/index.html">
+<meta property="og:title" content="使用powershell批量创建域账号">
+<meta property="og:url" content="https://wujun.org/create-multiple -ad-accounts-with-powershell/index.html">
 <meta property="og:site_name" content="Jun&#39;s Blog">
-<meta property="og:description" content="今天在抓取装机失败sms.log文件时用到，查了文档自己记录一下: 在命令行下复制文件或文件夹 使用的命令有copy和robocopy.  复制文件的copy命令，help copy 可以看到具体的语法示例： PS C:\WINDOWS\system32&amp;gt; copy C:\user.txt C:\Users\awujf\Dropbox">
+<meta property="og:description" content="最近要准备迁移文件服务器,把它从工作组用本地用户和组来共享的方式升级到域环境.花了3个多小时研究,记录一下.大概步骤:1 首先准备好用户信息,并生成csv文件.2 准备powershell脚本.3 运行脚本.几个需要注意的地方:1 注意powershell 版本号, 避免不能使用activedirectory moudle.2 脚本先放在powershell ise里跑一下测试看看,有没有错误,注">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-10-26T14:45:38.739Z">
+<meta property="og:updated_time" content="2019-11-16T15:40:26.170Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="在windows命令行中复制文件">
-<meta name="twitter:description" content="今天在抓取装机失败sms.log文件时用到，查了文档自己记录一下: 在命令行下复制文件或文件夹 使用的命令有copy和robocopy.  复制文件的copy命令，help copy 可以看到具体的语法示例： PS C:\WINDOWS\system32&amp;gt; copy C:\user.txt C:\Users\awujf\Dropbox">
+<meta name="twitter:title" content="使用powershell批量创建域账号">
+<meta name="twitter:description" content="最近要准备迁移文件服务器,把它从工作组用本地用户和组来共享的方式升级到域环境.花了3个多小时研究,记录一下.大概步骤:1 首先准备好用户信息,并生成csv文件.2 准备powershell脚本.3 运行脚本.几个需要注意的地方:1 注意powershell 版本号, 避免不能使用activedirectory moudle.2 脚本先放在powershell ise里跑一下测试看看,有没有错误,注">
 
-<link rel="canonical" href="https://wujun.org/copy-files-with-command-line-on-windows/">
+<link rel="canonical" href="https://wujun.org/create-multiple -ad-accounts-with-powershell/">
 
 
 <script id="page-configurations">
@@ -77,7 +77,7 @@
   };
 </script>
 
-  <title>在windows命令行中复制文件 | Jun's Blog</title>
+  <title>使用powershell批量创建域账号 | Jun's Blog</title>
   
 
 
@@ -188,7 +188,7 @@
   
   
   <article itemscope="" itemtype="http://schema.org/Article" class="post-block " lang="default">
-    <link itemprop="mainEntityOfPage" href="https://wujun.org/copy-files-with-command-line-on-windows/">
+    <link itemprop="mainEntityOfPage" href="https://wujun.org/create-multiple -ad-accounts-with-powershell/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -201,7 +201,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          在windows命令行中复制文件
+          使用powershell批量创建域账号
         </h1>
 
         <div class="post-meta">
@@ -211,7 +211,7 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2018-11-29 17:02:31" itemprop="dateCreated datePublished" datetime="2018-11-29T17:02:31+08:00">2018-11-29</time>
+              <time title="Created: 2019-11-16 23:23:04" itemprop="dateCreated datePublished" datetime="2019-11-16T23:23:04+08:00">2019-11-16</time>
             </span>
 
           
@@ -225,33 +225,37 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>今天在抓取装机失败<code>sms.log</code>文件时用到，查了文档自己记录一下:</p>
-<p>在命令行下复制文件或文件夹 使用的命令有<code>copy</code>和<code>robocopy</code>.</p>
-<ol>
-<li><p>复制文件的<code>copy</code>命令，<code>help copy</code> 可以看到具体的语法<br>示例：</p>
-<pre><code>PS C:\WINDOWS\system32&gt; copy C:\user.txt C:\Users\awujf\Dropbox
-</code></pre></li>
-</ol>
-<a id="more"></a>
-<ol start="2">
-<li><p>复制文件夹使用 <code>robocopy</code>命令, <code>robocopy help</code> 查看详细语法<br> 示例：</p>
-<pre><code>robocopy C:\test  C:\Users\awujf\Dropbox /e
-</code></pre><p> <code>robocopy</code>有很多其他参数，使用<code>robocopy /?</code>来查看具体用法：</p>
-<ul>
-<li><p><em>.</em> 源文件或文件中，有文件名中带空格时需要用到</p>
-</li>
-<li><p>/r  复制所有文件，包括隐藏的文件</p>
-</li>
-<li><p>/mir 复制的文件，带有完整的权限，备份时会用到</p>
-<p>详细语法:</p>
-<p>  PS C:\WINDOWS\system32&gt; robocopy /?</p>
-</li>
-</ul>
-</li>
-</ol>
-<p>Reference:</p>
-<p><a href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/robocopy" target="_blank" rel="noopener">https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/robocopy</a></p>
-<p><a href="https://zh.wikihow.com/%E5%9C%A8%E5%91%BD%E4%BB%A4%E6%8F%90%E7%A4%BA%E7%AC%A6%E4%B8%AD%E5%A4%8D%E5%88%B6%E6%96%87%E4%BB%B6" target="_blank" rel="noopener">https://zh.wikihow.com/%E5%9C%A8%E5%91%BD%E4%BB%A4%E6%8F%90%E7%A4%BA%E7%AC%A6%E4%B8%AD%E5%A4%8D%E5%88%B6%E6%96%87%E4%BB%B6</a></p>
+        <p>最近要准备迁移文件服务器,把它从工作组用本地用户和组来共享的方式升级到域环境.花了3个多小时研究,记录一下.</p><p>大概步骤:<br>1 首先准备好用户信息,并生成csv文件.<br>2 准备powershell脚本.<br>3 运行脚本.</p><p>几个需要注意的地方:<br>1 注意powershell 版本号, 避免不能使用activedirectory moudle.<br>2 脚本先放在powershell ise里跑一下测试看看,有没有错误,注意语法和大小写.<br>3 注意csv文件的路径.<br>4 检查是否有同名的人.</p><a id="more"></a>
+
+
+<p>附上脚本:</p>
+<pre><code>Import-Module ActiveDirectory
+</code></pre><p>#Enter a path to your import CSV file<br>$ADUsers = Import-csv C:\newusers.csv</p>
+<p>foreach ($User in $ADUsers)<br>{</p>
+<pre><code>$Username    = $User.username
+$Password    = $User.password
+$Firstname   = $User.firstname
+$Lastname    = $User.lastname
+$Description = $User.description
+$OU           = $User.ou
+
+ #Account will be created in the OU listed in the $OU variable in the CSV file; don’t forget to change the domain name in the&quot;-UserPrincipalName&quot; variable
+       New-ADUser  `
+     -SamAccountName $Username `
+     -UserPrincipalName &quot;$Username@dushu.local&quot; `
+     -Name &quot;$Username&quot; `
+     -GivenName $Firstname `
+     -Surname $Lastname `
+     -Enabled $True `
+     -ChangePasswordAtLogon $True `
+     -DisplayName &quot;$Username&quot; `
+     -Description $Description `
+     -Path $OU `
+     -AccountPassword (convertto-securestring $Password -AsPlainText -Force)
+</code></pre><p>}</p>
+<p>参考链接:</p>
+<p><a href="https://docs.microsoft.com/en-us/powershell/module/addsadministration/New-ADUser?view=win10-ps" target="_blank" rel="noopener">https://docs.microsoft.com/en-us/powershell/module/addsadministration/New-ADUser?view=win10-ps</a></p>
+<p><a href="https://blog.netwrix.com/2018/06/07/how-to-create-new-active-directory-users-with-powershell/" target="_blank" rel="noopener">https://blog.netwrix.com/2018/06/07/how-to-create-new-active-directory-users-with-powershell/</a></p>
 
     </div>
 
@@ -262,25 +266,20 @@
       <footer class="post-footer">
           <div class="post-tags">
               <a href="/tags/powershell/" rel="tag"># powershell</a>
-              <a href="/tags/windows/" rel="tag"># windows</a>
-              <a href="/tags/robocopy/" rel="tag"># robocopy</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
-                <a href="/how-to-setup-ftp-on-ubuntu-1804-with-vsftpd/" rel="next" title="ubuntu 1804 上配置FTP">
-                  <i class="fa fa-chevron-left"></i> ubuntu 1804 上配置FTP
+                <a href="/mail-merge/" rel="next" title="如何使用邮件合并功能">
+                  <i class="fa fa-chevron-left"></i> 如何使用邮件合并功能
                 </a>
             </div>
 
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-                <a href="/2019/" rel="prev" title="2019">
-                  2019 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
       </footer>
