@@ -50,32 +50,34 @@
   };
 </script>
 
-  <meta name="description" content="Stay Hungry Stay Foolish">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Jun&#39;s Blog">
-<meta property="og:url" content="https://wujun.org/page/4/index.html">
+  <meta name="description" content="这周更新了几个新款的华为交换机,记录一下几个常用的配置,供以后自己查询.参考自华为官网技术支持的机器人.1 清除配置信息:a. 清空设备下次启动使用的配置文件内的内容，并取消指定系统下次启动时使用的配置文件。 reset saved-configurationThe action will delete the saved configuration in the device.The confi">
+<meta name="keywords" content="switch,network">
+<meta property="og:type" content="article">
+<meta property="og:title" content="华为交换机的几个基础配置">
+<meta property="og:url" content="https://wujun.org/huawei-switch-config/index.html">
 <meta property="og:site_name" content="Jun&#39;s Blog">
-<meta property="og:description" content="Stay Hungry Stay Foolish">
+<meta property="og:description" content="这周更新了几个新款的华为交换机,记录一下几个常用的配置,供以后自己查询.参考自华为官网技术支持的机器人.1 清除配置信息:a. 清空设备下次启动使用的配置文件内的内容，并取消指定系统下次启动时使用的配置文件。 reset saved-configurationThe action will delete the saved configuration in the device.The confi">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-11-27T12:12:42.121Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Jun&#39;s Blog">
-<meta name="twitter:description" content="Stay Hungry Stay Foolish">
+<meta name="twitter:title" content="华为交换机的几个基础配置">
+<meta name="twitter:description" content="这周更新了几个新款的华为交换机,记录一下几个常用的配置,供以后自己查询.参考自华为官网技术支持的机器人.1 清除配置信息:a. 清空设备下次启动使用的配置文件内的内容，并取消指定系统下次启动时使用的配置文件。 reset saved-configurationThe action will delete the saved configuration in the device.The confi">
 
-<link rel="canonical" href="https://wujun.org/page/4/">
+<link rel="canonical" href="https://wujun.org/huawei-switch-config/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome: true,
-    isPost: false,
+    isHome: false,
+    isPost: true,
     isPage: false,
     isArchive: false
   };
 </script>
 
-  <title>Jun's Blog</title>
+  <title>华为交换机的几个基础配置 | Jun's Blog</title>
   
 
 
@@ -182,11 +184,11 @@
             
 
   <div class="posts-expand">
-        
+      
   
   
-  <article itemscope="" itemtype="http://schema.org/Article" class="post-block home" lang="default">
-    <link itemprop="mainEntityOfPage" href="https://wujun.org/git/">
+  <article itemscope="" itemtype="http://schema.org/Article" class="post-block " lang="default">
+    <link itemprop="mainEntityOfPage" href="https://wujun.org/huawei-switch-config/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -199,8 +201,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/git/" class="post-title-link" itemprop="url">Git 新手配置</a>
+          华为交换机的几个基础配置
         </h1>
 
         <div class="post-meta">
@@ -210,7 +211,7 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2018-10-27 12:05:18" itemprop="dateCreated datePublished" datetime="2018-10-27T12:05:18+08:00">2018-10-27</time>
+              <time title="Created: 2019-11-27 19:57:59" itemprop="dateCreated datePublished" datetime="2019-11-27T19:57:59+08:00">2019-11-27</time>
             </span>
 
           
@@ -224,103 +225,66 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>Git 也是我在学习Python的时候才开始了解的，我理解它就是一款用来控制代码版本的一个工具。下面是初学者的入门配置。</p><ol>
-<li><p>下载安装</p>
-<p>下载 ：<a href="https://github.com/waylau/git-for-win" target="_blank" rel="noopener">Git for windows 国内下载站</a> </p>
-<p>安装过程省略。</p>
-</li>
-<li><p>配置Git<br>在任意地方右键点Git bash here </p>
-<pre><code>$ git config --global user.name &quot;你的名字&quot;
+        <p>这周更新了几个新款的华为交换机,记录一下几个常用的配置,供以后自己查询.参考自华为官网技术支持的机器人.</p><p>1 清除配置信息:</p><p>a. 清空设备下次启动使用的配置文件内的内容，并取消指定系统下次启动时使用的配置文件。</p><p><huawei> reset saved-configuration<br>The action will delete the saved configuration in the device.<br>The configuration will be erased to reconfigure. Continue? [Y/N]:y<br>b. 重启设备。</huawei></p><a id="more"></a>
 
-$ git config --global user.email 你的邮件地址
-</code></pre></li>
+
+
+<p><huawei> reboot<br> Info: The system is now comparing the configuration, please wait.<br>Warning: All the configuration will be saved to the configuration file for the next startup:, Continue?[Y/N]:n（注意：此处提示是否保存当前配置，须选择”N”）<br>System will reboot! Continue?[Y/N]:y （再选”Y”，重启设备）</huawei></p>
+<p>2 配置telnet</p>
+<p>a 开启telnet<br>system-view<br>telnet server enable<br>user-interface vty 0 4<br>[HUAWEI-ui-vty0-4] protocol inbound telnet   </p>
+<p>b. 配置VTY用户界面的用户验证方式及用户信息，具体配置方法如下：<br>-配置认证方式为aaa<br>[HUAWEI-ui-vty0-4] authentication-mode aaa<br>[HUAWEI-ui-vty0-4] quit<br>[HUAWEI] aaa<br>[HUAWEI-aaa] local-user admin1234 password irreversible-cipher Helloworld@6789<br>[HUAWEI-aaa] local-user admin1234 service-type telnet  terminal<br>[HUAWEI-aaa] local-user admin1234 privilege level 3<br>[HUAWEI-aaa] quit</p>
+<p>3 端口批量配置:</p>
+<p>S系列和E系列交换机（S1700除外）配置端口组功能，可快速完成多个接口批量配置，减少重复配置工作。其具体配置如下： </p>
+<ol>
+<li>永久端口组，加入GE1/0/1至GE1/0/8；<br><huawei> system-view<br>[HUAWEI] port-group test //命名<br>[HUAWEI-port-group-test] group-member gigabitethernet 1/0/1 to gigabitethernet 1/0/8 </huawei></li>
+<li>临时端口组，加入GE1/0/9至GE1/0/15；<br><huawei> system-view<br>[HUAWEI] port-group group-member gigabitethernet 1/0/9 to gigabitethernet 1/0/15 </huawei></li>
+<li>临时端口组，加入GE1/0/16至GE1/0/20（使用interface range命令，仅V200R003C00及后续版本支持）。<br><huawei> system-view<br>[HUAWEI] interface range gigabitethernet 1/0/16 to gigabitethernet 1/0/20 </huawei></li>
 </ol>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/git/#more" rel="contents">
-                Read more &raquo;
-              </a>
+<p>加入临时端口组后，一旦退出端口组视图，该临时端口组将被系统自动删除。<br>加入永久端口组后，即使退出端口组视图，该端口组及对应的端口成员仍然存在，便于下次的批量下发配置。如果用户希望删除永久端口组，需要执行命令undo port-group { all | port-group-name }，删除永久端口组。</p>
+<p>clear configuration this 清除端口配置</p>
+<ol start="4">
+<li>端口vlan配置</li>
+</ol>
+<p>port link-type trunk</p>
+<p>port trunk allow-pass vlan 2 to 3 </p>
+<p>Port trunk pvid vlan 2</p>
+<p>port link-type access</p>
+<p> port default vlan 2</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/switch/" rel="tag"># switch</a>
+              <a href="/tags/network/" rel="tag"># network</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+                <a href="/create-multiple -ad-accounts-with-powershell/" rel="next" title="使用powershell批量创建域账号">
+                  <i class="fa fa-chevron-left"></i> 使用powershell批量创建域账号
+                </a>
             </div>
-          <!--/noindex-->
-        
-      
-    </div>
 
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+            </div>
+          </div>
       </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope="" itemtype="http://schema.org/Article" class="post-block home" lang="default">
-    <link itemprop="mainEntityOfPage" href="https://wujun.org/start/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="mkls">
-      <meta itemprop="description" content="Stay Hungry Stay Foolish">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jun's Blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/start/" class="post-title-link" itemprop="url">Start</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2018-10-26 16:05:18" itemprop="dateCreated datePublished" datetime="2018-10-26T16:05:18+08:00">2018-10-26</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
     
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>欢迎来到我的博客，这是我的第一篇博文，这里主要记录自己在学习和工作中遇到的一些问题，以前的旧博文也不打算迁移了，就这样吧,以后会慢慢更新,更新进度随缘.</p><p>Power By <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a>, theme <a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">Next</a> and host by <a href="https://pages.github.com/" target="_blank" rel="noopener">Github Pages</a>.</p>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
   </article>
   
   
   
 
   </div>
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span>
-  </nav>
-
 
 
           </div>
